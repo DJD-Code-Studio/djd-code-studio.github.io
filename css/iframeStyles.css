@@ -1,5 +1,5 @@
 .emmetIframe {
-	frameborder=0px;
-	width=70%;
-	height=600px;
+	border: 5px;
+	width: 70%;
+	height: 600px;
 }
