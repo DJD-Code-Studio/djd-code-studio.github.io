@@ -1,0 +1,271 @@
+Setting Up scikit-learn package
+
+<pre>
+C:\Users\duttad>pip install -U scikit-learn
+Collecting scikit-learn
+  Using cached scikit-learn-0.18.1.tar.gz
+Installing collected packages: scikit-learn
+  Running setup.py install for scikit-learn ... error
+    Complete output from command c:\djd\python\python36-32\python.exe -u -c "import setuptools, tokenize;__file__='C:\\Users\\dutt
+ad\\AppData\\Local\\Temp\\pip-build-i16ismmc\\scikit-learn\\setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().re
+place('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --record C:\Users\duttad\AppData\Local\Temp\pip-xq_q1
+rfm-record\install-record.txt --single-version-externally-managed --compile:
+    Partial import of sklearn during the build process.
+    Traceback (most recent call last):
+      File "C:\Users\duttad\AppData\Local\Temp\pip-build-i16ismmc\scikit-learn\setup.py", line 169, in get_numpy_status
+        import numpy
+    ModuleNotFoundError: No module named 'numpy'
+    Traceback (most recent call last):
+      File "C:\Users\duttad\AppData\Local\Temp\pip-build-i16ismmc\scikit-learn\setup.py", line 149, in get_scipy_status
+        import scipy
+    ModuleNotFoundError: No module named 'scipy'
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "C:\Users\duttad\AppData\Local\Temp\pip-build-i16ismmc\scikit-learn\setup.py", line 270, in <module>
+        setup_package()
+      File "C:\Users\duttad\AppData\Local\Temp\pip-build-i16ismmc\scikit-learn\setup.py", line 250, in setup_package
+        .format(numpy_req_str, instructions))
+    ImportError: Numerical Python (NumPy) is not installed.
+    scikit-learn requires NumPy >= 1.6.1.
+    Installation instructions are available on the scikit-learn website: http://scikit-learn.org/stable/install.html
+
+
+    ----------------------------------------
+Command "c:\djd\python\python36-32\python.exe -u -c "import setuptools, tokenize;__file__='C:\\Users\\duttad\\AppData\\Local\\Temp
+\\pip-build-i16ismmc\\scikit-learn\\setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.cl
+ose();exec(compile(code, __file__, 'exec'))" install --record C:\Users\duttad\AppData\Local\Temp\pip-xq_q1rfm-record\install-recor
+d.txt --single-version-externally-managed --compile" failed with error code 1 in C:\Users\duttad\AppData\Local\Temp\pip-build-i16i
+smmc\scikit-learn\
+
+
+
+C:\Users\duttad>pip install -U scikit-learn[alldeps]
+Collecting scikit-learn[alldeps]
+  Using cached scikit-learn-0.18.1.tar.gz
+Collecting numpy>=1.6.1 (from scikit-learn[alldeps])
+  Downloading numpy-1.12.1-cp36-none-win32.whl (6.7MB)
+    100% |████████████████████████████████| 6.7MB 149kB/s
+Collecting scipy>=0.9 (from scikit-learn[alldeps])
+  Downloading scipy-0.19.0.zip (15.3MB)
+    100% |████████████████████████████████| 15.3MB 67kB/s
+    Complete output from command python setup.py egg_info:
+    non-existing path in 'numpy\\distutils': 'site.cfg'
+    Running from numpy source directory.
+    C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\setup.py:366: UserWarning: Unrecognized setuptools comma
+nd, proceeding with generating Cython sources and expanding templates
+      run_build = parse_setuppy_commands()
+    C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\system_info.py:572: UserWarning:
+        Atlas (http://math-atlas.sourceforge.net/) libraries not found.
+        Directories to search for the libraries can be specified in the
+        numpy/distutils/site.cfg file (section [atlas]) or by setting
+        the ATLAS environment variable.
+      self.calc_info()
+    C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\system_info.py:572: UserWarning:
+        Blas (http://www.netlib.org/blas/) libraries not found.
+        Directories to search for the libraries can be specified in the
+        numpy/distutils/site.cfg file (section [blas]) or by setting
+        the BLAS environment variable.
+      self.calc_info()
+    C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\system_info.py:572: UserWarning:
+        Blas (http://www.netlib.org/blas/) sources not found.
+        Directories to search for the sources can be specified in the
+        numpy/distutils/site.cfg file (section [blas_src]) or by setting
+        the BLAS_SRC environment variable.
+      self.calc_info()
+    C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\system_info.py:572: UserWarning:
+        Lapack (http://www.netlib.org/lapack/) libraries not found.
+        Directories to search for the libraries can be specified in the
+        numpy/distutils/site.cfg file (section [lapack]) or by setting
+        the LAPACK environment variable.
+      self.calc_info()
+    C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\system_info.py:572: UserWarning:
+        Lapack (http://www.netlib.org/lapack/) sources not found.
+        Directories to search for the sources can be specified in the
+        numpy/distutils/site.cfg file (section [lapack_src]) or by setting
+        the LAPACK_SRC environment variable.
+      self.calc_info()
+    c:\djd\python\python36-32\lib\distutils\dist.py:261: UserWarning: Unknown distribution option: 'define_macros'
+      warnings.warn(msg)
+    Traceback (most recent call last):
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\msvc.py", line 477, in __init__
+        self.vc_ver = self.find_available_vc_vers()[-1]
+    IndexError: list index out of range
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "c:\djd\python\python36-32\lib\distutils\core.py", line 148, in setup
+        dist.run_commands()
+      File "c:\djd\python\python36-32\lib\distutils\dist.py", line 955, in run_commands
+        self.run_command(cmd)
+      File "c:\djd\python\python36-32\lib\distutils\dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\command\bdist_egg.py", line 152, in run
+        self.run_command("egg_info")
+      File "c:\djd\python\python36-32\lib\distutils\cmd.py", line 313, in run_command
+        self.distribution.run_command(command)
+      File "c:\djd\python\python36-32\lib\distutils\dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\command\egg_info.py", line 18, i
+n run
+      File "c:\djd\python\python36-32\lib\distutils\cmd.py", line 313, in run_command
+        self.distribution.run_command(command)
+      File "c:\djd\python\python36-32\lib\distutils\dist.py", line 974, in run_command
+        cmd_obj.run()
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\command\build_src.py", line 148,
+ in run
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\command\build_src.py", line 159,
+ in build_sources
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\command\build_src.py", line 294,
+ in build_library_sources
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\command\build_src.py", line 377,
+ in generate_sources
+      File "numpy\core\setup.py", line 663, in get_mathlib_info
+      File "c:\djd\python\python36-32\lib\distutils\command\config.py", line 243, in try_link
+        self._check_compiler()
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\command\config.py", line 51, in
+_check_compiler
+      File "c:\djd\python\python36-32\lib\distutils\_msvccompiler.py", line 197, in initialize
+        vc_env = _get_vc_env(plat_spec)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\msvc.py", line 172, in msvc14_get_vc_env
+        return EnvironmentInfo(plat_spec, vc_min_ver=14.0).return_env()
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\msvc.py", line 771, in __init__
+        self.si = SystemInfo(self.ri, vc_ver)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\msvc.py", line 480, in __init__
+        raise distutils.errors.DistutilsPlatformError(err)
+    distutils.errors.DistutilsPlatformError: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools"
+: http://landinghub.visualstudio.com/visual-cpp-build-tools
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 157, in save_modules
+        yield saved
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 198, in setup_context
+        yield
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 248, in run_setup
+        DirectorySandbox(setup_dir).run(runner)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 278, in run
+        return func()
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 246, in runner
+        _execfile(setup_script, ns)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 47, in _execfile
+        exec(code, globals, locals)
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\setup.py", line 391, in <module>
+        # from numpy.distutils, but after the MANIFEST removing and sdist import
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\setup.py", line 383, in setup_package
+
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\core.py", line 169, in setup
+      File "c:\djd\python\python36-32\lib\distutils\core.py", line 163, in setup
+        raise SystemExit("error: " + str(msg))
+    SystemExit: error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": http://landinghub.vi
+sualstudio.com/visual-cpp-build-tools
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\command\easy_install.py", line 1101, in run_setup
+        run_setup(setup_script, args)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 251, in run_setup
+        raise
+      File "c:\djd\python\python36-32\lib\contextlib.py", line 100, in __exit__
+        self.gen.throw(type, value, traceback)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 198, in setup_context
+        yield
+      File "c:\djd\python\python36-32\lib\contextlib.py", line 100, in __exit__
+        self.gen.throw(type, value, traceback)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 169, in save_modules
+        saved_exc.resume()
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 144, in resume
+        six.reraise(type, exc, self._tb)
+      File "c:\djd\python\python36-32\lib\site-packages\pkg_resources\_vendor\six.py", line 685, in reraise
+        raise value.with_traceback(tb)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 157, in save_modules
+        yield saved
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 198, in setup_context
+        yield
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 248, in run_setup
+        DirectorySandbox(setup_dir).run(runner)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 278, in run
+        return func()
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 246, in runner
+        _execfile(setup_script, ns)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\sandbox.py", line 47, in _execfile
+        exec(code, globals, locals)
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\setup.py", line 391, in <module>
+        # from numpy.distutils, but after the MANIFEST removing and sdist import
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\setup.py", line 383, in setup_package
+
+      File "C:\Users\duttad\AppData\Local\Temp\easy_install-emsnayf_\numpy-1.12.1\numpy\distutils\core.py", line 169, in setup
+      File "c:\djd\python\python36-32\lib\distutils\core.py", line 163, in setup
+        raise SystemExit("error: " + str(msg))
+    SystemExit: error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft Visual C++ Build Tools": http://landinghub.vi
+sualstudio.com/visual-cpp-build-tools
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "C:\Users\duttad\AppData\Local\Temp\pip-build-gu6i5r5q\scipy\setup.py", line 416, in <module>
+        setup_package()
+      File "C:\Users\duttad\AppData\Local\Temp\pip-build-gu6i5r5q\scipy\setup.py", line 412, in setup_package
+        setup(**metadata)
+      File "c:\djd\python\python36-32\lib\distutils\core.py", line 108, in setup
+        _setup_distribution = dist = klass(attrs)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\dist.py", line 315, in __init__
+        self.fetch_build_eggs(attrs['setup_requires'])
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\dist.py", line 361, in fetch_build_eggs
+        replace_conflicting=True,
+      File "c:\djd\python\python36-32\lib\site-packages\pkg_resources\__init__.py", line 850, in resolve
+        dist = best[req.key] = env.best_match(req, ws, installer)
+      File "c:\djd\python\python36-32\lib\site-packages\pkg_resources\__init__.py", line 1122, in best_match
+        return self.obtain(req, installer)
+      File "c:\djd\python\python36-32\lib\site-packages\pkg_resources\__init__.py", line 1134, in obtain
+        return installer(requirement)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\dist.py", line 429, in fetch_build_egg
+        return cmd.easy_install(req)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\command\easy_install.py", line 665, in easy_install
+        return self.install_item(spec, dist.location, tmpdir, deps)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\command\easy_install.py", line 695, in install_item
+        dists = self.install_eggs(spec, download, tmpdir)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\command\easy_install.py", line 876, in install_eggs
+        return self.build_and_install(setup_script, setup_base)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\command\easy_install.py", line 1115, in build_and_install
+        self.run_setup(setup_script, setup_base, args)
+      File "c:\djd\python\python36-32\lib\site-packages\setuptools\command\easy_install.py", line 1103, in run_setup
+        raise DistutilsError("Setup script exited with %s" % (v.args[0],))
+    distutils.errors.DistutilsError: Setup script exited with error: Microsoft Visual C++ 14.0 is required. Get it with "Microsoft
+ Visual C++ Build Tools": http://landinghub.visualstudio.com/visual-cpp-build-tools
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in C:\Users\duttad\AppData\Local\Temp\pip-build-gu6i5r5q\scipy\
+
+C:\Users\duttad>S
+</pre>
+
+
+<h1>This is a life saver for working on Python under Windows operating system - <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">Unofficial Windows Binaries for Python Extension Packages</h1>
+
+
+The following worked so far 
+
+
+<pre>
+C:\Users\duttad>pip install -U "C:\DJD\numpy-1.12.1+mkl-cp36-cp36m-win32.whl"
+Processing c:\djd\numpy-1.12.1+mkl-cp36-cp36m-win32.whl
+Installing collected packages: numpy
+Successfully installed numpy-1.12.1+mkl
+
+C:\Users\duttad>pip install -U "C:\DJD\scipy-0.19.0-cp36-cp36m-win32.whl"
+Processing c:\djd\scipy-0.19.0-cp36-cp36m-win32.whl
+Requirement already up-to-date: numpy>=1.8.2 in c:\djd\python\python36-32\lib\site-packages (from scipy==0.19.0)
+Installing collected packages: scipy
+Successfully installed scipy-0.19.0
+
+C:\Users\duttad>pip install -U "C:\DJD\scikit_learn-0.18.1-cp36-cp36m-win32.whl"
+Processing c:\djd\scikit_learn-0.18.1-cp36-cp36m-win32.whl
+Installing collected packages: scikit-learn
+Successfully installed scikit-learn-0.18.1
+
+C:\Users\duttad>
+</pre>
