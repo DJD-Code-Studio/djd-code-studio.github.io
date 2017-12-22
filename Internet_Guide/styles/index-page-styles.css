@@ -1,0 +1,48 @@
+#LandingPage {
+				background-color: rgba(150,200,200,1);
+			}
+#heading {
+				text-align: center;
+		}
+
+.alphatable {
+				margin: 0px;
+				/*border-style: dashed;*/
+				border-width: 1px;
+				padding: 5px;
+				
+			}
+
+.alphagroupname {
+				font-size: x-large;
+				list-style-type: none;
+				background-color: rgba(255,0,0,1);
+				width: 100px;
+				border-width: 2px;
+				margin: 3px;
+			}
+
+.alphagroup {
+				list-style-type: none;
+			}
+
+.topicgroup {
+				margin-left: 50px;
+				border-width: 1px;
+				padding: 10px;
+				
+			}
+
+.topics {
+				font-size: large;
+				list-style-type: none;
+				background-color: rgba(0,255,255,1);
+				display: inline;
+				margin: 5px;
+				padding: 5px;
+				
+			}
+
+.alphagroupname, .topics {
+				text-align: center;
+			}
