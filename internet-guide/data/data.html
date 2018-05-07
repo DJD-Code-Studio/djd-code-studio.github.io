@@ -1,97 +1,127 @@
 <html>
 
-<head>
-  <title>Internet Guide</title>
-  <style>
-    #page-title {
-      color: blue;
-      text-align: center;
-      text-decoration: underline;
-      text-decoration-style: wavy;
-    }
+  <head>
+    <title>Internet Guide</title>
+    <style>
+      #page-title {
+        color: blue;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-decoration-style: wavy;
+      }
 
-    .ForAllDivs {
-      margin: auto;
-      border: 10px;
-      /*border-style: solid;
-      border-color: blue;*/
-      width: 70%;
-      height: 87%;
-      overflow: auto;
-    }
+      .ForAllDivs {
+        margin: auto;
+        border: 10px;
+        /*border-style: solid;
+    border-color: blue;*/
+        width: 70%;
+        height: 87%;
+        overflow: auto;
+      }
 
-    .ForEachDiv {
-      margin: auto;
-      padding: 10px;
-      /*border-color: black;*/
-      border-width: 2px;
-      /*border-style: solid;*/
-      width: 97%;
-      height: 20%;
-      /*background-color: green;*/
-      display: block;
-    }
+      .ForEachDiv {
+        margin: auto;
+        padding: 10px;
+        /*border-color: black;*/
+        border-width: 2px;
+        /*border-style: solid;*/
+        width: 97%;
+        height: 24%;
+        /*background-color: green;*/
+        display: block;
+      }
 
-    .TextDiv {
-      display: block;
-      float: left;
-      margin: auto;
-      border: 0%;
-      padding: 0%;
-      width: 45%;
-      height: 100%;
-      text-align: center;
-      /*background-color: red;*/
-      /*border-color: blue;*/
-      border-width: 2px;
-      /*border-style: solid;*/
-    }
+      .TextDiv {
+        display: block;
+        float: left;
+        margin: auto;
+        border: 0%;
+        padding: 0%;
+        width: 55%;
+        height: 100%;
+        text-align: center;
+        font-family: monospace;
+        font-variant: normal;
+        font-size: 18px;
+        font: "Nirmala UI";
+        /*background-color: red;*/
+        /*border-color: blue;*/
+        border-width: 2px;
+        /*border-style: solid;*/
+      }
 
-    .ImageDiv {
-      display: block;
-      /*border: 1px solid black;*/
-      /*float: right;*/
-      margin: auto;
-      width: 50%;
-      height: 100%;
-      overflow: auto;
-    }
+      .ImageDiv {
+        display: block;
+        /*border: 1px solid black;*/
+        /*float: right;*/
+        margin: auto;
+        width: 40%;
+        height: 100%;
+        overflow: auto;
+      }
 
-    .img {
-      float: right;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
+      .img {
+        float: right;
+        width: 100%;
+        height: 86%;
+      }
 
-<body>
-  <h1 id="page-title"> Flat list of URLs</h1> <br><br>
-  <div class="ForAllDivs">
-    <div class="ForEachDiv ALBHABET CATEGORY SUBJECT TOPIC ETC" id="JOIN-THE-CLASS-NAMES-HYPHENETED">
-      <div class="TextDiv"> <br> <a href="www.sample.com">Sample Site</a> <br><br><br> <label> This is a sample for demo. Copy this DIV block next to the block &lt;!--  NEXT --&gt; to add the next item of the list. Replace the url, url text, label and imaage source with the appropriate one  <label><br>
+      abbr {
+        float: right;
+        /*border-style: solid;*/
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="page-title"> Flat list of URLs</h1> <br><br>
+    <div class="ForAllDivs">
+      <div class="ForEachDiv ALBHABET CATEGORY SUBJECT TOPIC ETC" id="JOIN-THE-CLASS-NAMES-HYPHENETED">
+        <div class="TextDiv">
+          <br>
+          <a href="www.sample.com">Sample Site</a>
+          <br><br>
+          <label> This is a sample for demo. Copy this DIV block next to the block &lt;!--  NEXT --&gt; to add the next item of the list. Replace the url, url text, label and imaage source with the appropriate one  <label>
+          <br>
+
+        </div>
+        <div class="ImageDiv">
+          <a href="www.sample.com"><img class="img" src="./snapshots/" alt="Sample Site"></a>
+        </div>
         <abbr title="www.sample.com">Site Name</abbr>
       </div>
-<div class="ImageDiv">
-      <a href="www.sample.com"><img class="img" src="./snapshots/Screenshot-2018-5-6_autocomplete-paths.png" alt="Sample Site"></a>
-      </div>
-    </div>
-    <!--  NEXT -->
-    <div class="ForEachDiv G DevOps Coding Git Updating" id="G-DevOps-Coding-Git-Updating">
-      <div class="TextDiv">
-        <br>
-        <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory">In a Git repository, how to properly rename a directory? - Stack Overflow</a>
-        <br><br><br>
-        <label> This page shows some the tricks to modify folder names that belong to Git repository<label><br>
-          <abbr title="https://stackoverflow.com">https://stackoverflow.com</abbr>
-      </div>
-<div class="ImageDiv">
-      <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory"><img class="img" src="./snapshots/Screenshot-2018-5-7_In-a-Git repository-how-to-properly-rename-a-directory.png" alt="Sample Site"></a>
-      </div>
-    </div>
-    <!--  NEXT -->
+      <!--  NEXT -->
+      <div class="ForEachDiv G DevOps Coding Git Updating" id="G-DevOps-Coding-Git-Updating">
+        <div class="TextDiv">
+          <br>
+          <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory">In a Git repository, how to properly rename a directory? - Stack Overflow</a>
+          <br><br>
+          <label> This page shows some the tricks to modify folder names that belong to Git repository<label>
+            <br>
+          </div>
+          <div class="ImageDiv">
+            <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory"><img class="img" src="./snapshots/Screenshot-2018-5-7_In-a-Git_repository-how-to-properly-rename-a-directory.png" alt="Sample Site"></a>
+          </div>
+          <abbr title="https://stackoverflow.com">stackoverflow.com</abbr>
+        </div>
+        <!--  NEXT -->
+        <div class="ForEachDiv B Coding Windows BatchScripting BatchFile" id="B-Coding-Windows-BatchScripting-BatchFile">
+          <div class="TextDiv">
+            <br>
+            <a href="https://stackoverflow.com/questions/10552812/declaring-and-using-a-variable-in-windows-batch-file-bat">Declaring and using a variable in Windows batch file (.BAT) - Stack Overflow</a>
+            <br><br>
+            <label> This is a sample for demo. Copy this DIV block next to the block &lt;!--  NEXT --&gt; to add the next item of the list. Replace the url, url text, label and imaage source with the appropriate one  <label>
+              <br>
+            </div>
+            <div class="ImageDiv">
+              <a href="https://stackoverflow.com/questions/10552812/declaring-and-using-a-variable-in-windows-batch-file-bat"><img class="img" src="./snapshots/2018-05-07-18-02-35__Declaring_and_using_a_variable_in_Windows_batch_file_(.BAT)_-_Stack_Overflow.png" alt="Sample Site"></a>
+            </div>
+            <abbr title="https://stackoverflow.com">stackoverflow.com</abbr>
+          </div>
+          <!--  NEXT -->
+        </div>
+      </body>
 
-  </div>
-</body>
-
-</html>
+      </html>
