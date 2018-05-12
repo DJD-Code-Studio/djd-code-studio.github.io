@@ -2,83 +2,8 @@
 
 <head>
   <title>Internet Guide</title>
-  <style>
-    #page-title {
-      color: blue;
-      text-align: center;
-      text-decoration: underline;
-      text-decoration-style: dashed;
-      text-decoration-style: wavy;
-    }
-
-    .ForAllDivs {
-      margin: auto;
-      border: 10px;
-      /*border-style: solid;
-    border-color: blue;*/
-      width: 70%;
-      height: 87%;
-      overflow: auto;
-    }
-
-    .ForEachDiv {
-      margin: auto;
-      padding: 10px;
-      /*border-color: black;*/
-      border-width: 2px;
-      /*border-style: solid;*/
-      width: 97%;
-      height: 24%;
-      /*background-color: green;*/
-      display: block;
-    }
-
-    .TextDiv {
-      display: block;
-      float: left;
-      margin: auto;
-      border: 0%;
-      padding: 0%;
-      width: 55%;
-      height: 100%;
-      text-align: center;
-      font-family: monospace;
-      font-variant: normal;
-      font-size: 18px;
-      font: "Nirmala UI";
-      /*background-color: red;*/
-      /*border-color: blue;*/
-      border-width: 2px;
-      /*border-style: solid;*/
-    }
-
-    .TextDiv a {
-      font-weight: bold;
-      font-variant: small-caps;
-      font-size: 20px;
-    }
-
-    .ImageDiv {
-      display: block;
-      /*border: 1px solid black;*/
-      /*float: right;*/
-      margin: auto;
-      width: 40%;
-      height: 100%;
-      overflow: auto;
-    }
-
-    .img {
-      float: right;
-      width: 100%;
-      height: 86%;
-    }
-
-    abbr {
-      float: right;
-      /*border-style: solid;*/
-    }
-  </style>
+  <link rel='stylesheet' type="text/css" href="../../styles/internet-guide.css">
+  </link>
 </head>
 
 <body>
@@ -90,32 +15,44 @@
         <div class="TextDiv">
           <br>
           <a href="www.sample.com" target="_blank">Sample Site</a>
+          <favorites class="rankingvalues">y</favorites>
+          <!--This tag can have values set to Y or N and will be used to auto-populate pre-built searches -->
+          <usage class="rankingvalues">never</usage>
+          <!--This values set to daily/weekly/monthly/yearly/occasionally/frequently/never and will be used to auto-populate pre-built searches -->
+          <pagerank class="rankingvalues">0</pagerank>
+          <!--This tag can have values set to a numerical value and will be used to sort search results for all types of page searches. For doamins the value will be set to 0.-->
+          <siterank class="rankingvalues">0</siterank>
+          <!--This tag can have values set to a numerical value and will be used to sort search results for all types of domain or site searches. For pages the value will be set to 0. -->
           <br><br>
           <label> This is a sample for demo. Copy this DIV block next to the block &lt;!--  NEXT --&gt; to add the next item of the list. Replace the url, url text, label and imaage source with the appropriate one  <label>
-          <br>
-        </div>
-        <div class="ImageDiv">
-          <a href="www.sample.com" target="_blank"><img class="img" src="./snapshots/" alt="Sample Site"></a>
-        </div>
-        <abbr title="www.sample.com">Site.Name</abbr>
-      </div>
-      </div>
-      <!--  NEXT -->
-      <div class="G DevOps Coding Git Updating" id="G-DevOps-Coding-Git-Updating">
-<div class="ForEachDiv">
-        <div class="TextDiv">
-          <br>
-          <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory" target="_blank">In a Git repository, how to properly rename a directory? - Stack Overflow</a>
-          <br><br>
-          <label> This page shows some the tricks to modify folder names that belong to Git repository<label>
             <br>
           </div>
           <div class="ImageDiv">
-            <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory" target="_blank"><img class="img" src="./snapshots/Screenshot-2018-5-7_In-a-Git_repository-how-to-properly-rename-a-directory.png" alt="Sample Site"></a>
+            <a href="www.sample.com" target="_blank"><img class="img" src="./snapshots/" alt="Sample Site"></a>
           </div>
-          <abbr title="https://stackoverflow.com">stackoverflow.com</abbr>
+          <abbr class="domainname" title="www.sample.com">Site.Name</abbr>
         </div>
       </div>
+      <!--  NEXT -->
+      <div class="G DevOps Coding Git Updating" id="G-DevOps-Coding-Git-Updating">
+        <div class="ForEachDiv">
+          <div class="TextDiv">
+            <br>
+            <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory" target="_blank">In a Git repository, how to properly rename a directory? - Stack Overflow</a>
+            <favorites class="rankingvalues">y</favorites>
+            <usage class="rankingvalues">occasionally</usage>
+            <pagerank class="rankingvalues">1</pagerank>
+            <siterank class="rankingvalues">0</siterank>
+            <br><br>
+            <label> This page shows some the tricks to modify folder names that belong to Git repository<label>
+              <br>
+            </div>
+            <div class="ImageDiv">
+              <a href="https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory" target="_blank"><img class="img" src="./snapshots/Screenshot-2018-5-7_In-a-Git_repository-how-to-properly-rename-a-directory.png" alt="Sample Site"></a>
+            </div>
+            <abbr class="domainname" title="https://stackoverflow.com">stackoverflow.com</abbr>
+          </div>
+        </div>
         <!--  NEXT -->
         <div class="ForEachDiv B Coding Windows BatchScripting BatchFile" id="B-Coding-Windows-BatchScripting-BatchFile">
           <div class="TextDiv">
@@ -128,7 +65,7 @@
             <div class="ImageDiv">
               <a href="https://stackoverflow.com/questions/10552812/declaring-and-using-a-variable-in-windows-batch-file-bat" target="_blank"><img class="img" src="./snapshots/2018-05-07-18-02-35__Declaring_and_using_a_variable_in_Windows_batch_file_(.BAT)_-_Stack_Overflow.png" alt="Sample Site"></a>
             </div>
-            <abbr title="https://stackoverflow.com">stackoverflow.com</abbr>
+            <abbr class="domainname" title="https://stackoverflow.com">stackoverflow.com</abbr>
           </div>
           <!--  NEXT -->
           <div class="ForEachDiv G UNIX Cygwin utility getmail" id="G-UNIX-Cygwin-utility-getmail">
@@ -142,9 +79,26 @@
         <div class="ImageDiv">
           <a href="https://www.linode.com/docs/email/clients/retrieve-email-using-getmail/" target="_blank"><img class="img" src="./snapshots/Screenshot-2018-5-9_Retrieve_Email_Using_Getmail.png" alt="Sample Site"></a>
         </div>
-        <abbr title="https://www.linode.com">linode.com</abbr>
+        <abbr class="domainname" title="https://www.linode.com">linode.com</abbr>
       </div>
       <!--  NEXT -->
+      <br>
+      <h2>pending</h2>
+      <h3 style="text-decoration: underline;"> promising ATOM packages</h3>
+
+      <br><br> https://atom.io/packages/process-palette
+      <br> https://atom.io/packages/pigments
+      <br> https://atom.io/packages/command-palette
+      <br>
+
+      <h3 style="text-decoration: underline;">Microsoft Virtual Academy / VS Code / Visual Studio</h3>
+
+      <br>
+      <br> [with login - debajyotidutta@live.com] https://mva.microsoft.com/MyMVA/Dashboard.aspx
+      <br> https://www.visualstudio.com/free-developer-offers/
+      <br> [with login - same as MVA] https://my.visualstudio.com/?wt.mc_id=o~msft~vscom~devessentials-hero~12778&campaign=o~msft~vscom~devessentials-hero~12778
+      <br>
+
     </div>
 </body>
 
