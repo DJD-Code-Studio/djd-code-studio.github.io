@@ -1,0 +1,71 @@
+body {
+  background-image: radial-gradient( rgba(255,055,0,0.5), rgba(0,055,255,0.9));
+  /*background-image: linear-gradient(to right, rgba(255,255,0,0.5), rgba(0,255,255,0.5));*/
+  /*url('https://mdn.mozillademos.org/files/7693/catfront.png');*/
+
+}
+#maindiv {
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  height: 100%;
+  background-color: white;
+  font-family: monospace;
+  font-size: 2.5em;
+  overflow: auto;
+
+}
+/*.contentblock {
+  margin: auto;
+  width: 99%;
+  height: auto;
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: cyan;
+  border: 5px dotted red;
+}*/
+.technologyname {
+  text-decoration: underline;
+  text-decoration-style: double;
+
+}
+.chapterblock {
+
+}
+.chapter {
+  float: left;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  width: 97%;
+  text-align: left;
+  /*background-color: red;*/
+  font-style: oblique;
+  text-decoration: underline;
+
+}
+.topic, .faq {
+  float: left;
+  margin-left: 5%;
+  margin-bottom: 1%;
+  font-style: italic;
+  text-decoration: underline;
+}
+.subtopic, .question, .answer {
+  float: left;
+  margin-left: 8%;
+  margin-bottom: 1%;
+}
+.textcontent {
+  text-align: left;
+  float: right;
+  /*display: block;*/
+  margin: auto;
+  margin-right: 1%;
+  width: 80%;
+  height: auto;
+  /*overflow: visible;*/
+  /*background-color: blue;*/
+
+
+}

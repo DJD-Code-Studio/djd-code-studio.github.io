@@ -1,0 +1,80 @@
+<html>
+
+<head>
+  <title>IBM MQ Study Notes</title>
+  <link rel='stylesheet' type="text/css" href="../styles/studynotes.css">
+</head>
+
+<body>
+  <div id="maindiv">
+    <h1 class="technologyname">IBM MQ</h1>
+    <h2>Study Notes</h2>
+
+    <div class="chapterblock">
+      <h3 class="chapter">Chapter - Installation and Versions</h3>
+      <p class="textcontent">
+        <br>Upto MQ v7.0 only 1 installation per host/system/server/os image was allowed.
+        <br>From version MQ v7.0.1.0, MULTIINSTANCE QUEUE MANAGER was introduced. This support HA (High Availability) feature
+        <br>From version MQ v7.0.1.6 multiple installation of MQ per host/system/server/os image is allowed. It allowes upto 128 installations per host.
+        <br>From version MQ v7.1, CHANNEL AUTHENTICATION RECORDS were introduced.
+      </p>
+    </div>
+    <div class="chapterblock">
+      <h3 class="chapter">Chapter - Queue Manager</h3>
+      <p class="textcontent">
+
+      </p>
+    </div>
+    <div class="chapterblock">
+      <h3 class="chapter">Chapter - Queue</h3>
+      <p class="textcontent">
+        <br>Local Queue
+        <br>Remote Queue
+        <br>Normal Queue
+        <br>Transmission Queue
+      </p>
+    </div>
+    <div class="chapterblock">
+      <h3 class="chapter">Chapter - Channel</h3>
+      <p class="textcontent">
+        <br>Server Connection channel [SRVCON] channel
+        <br>Client Connection channel [CLNTCONN]
+      </p>
+    </div>
+    <div class="chapterblock">
+      <h3 class="chapter">Chatpter - Clustering</h3>
+      <p class="textcontent">
+        show
+      </p>
+    </div>
+    <div class="chapterblock">
+      <h4 class="topic">Topic - Cluster Creation</h4>
+      <p class="textcontent">
+        show
+      </p>
+    </div>
+    <div class="chapterblock">
+      <h3 class="chapter">Chapter - Distributed Queueing</h3>
+      <p class="textcontent">
+        It explains how 2 systems ( can be 2 different hosts) send or receive messages through MQ protocol. The 2 systems will have 2 different queue managers.
+        <br>Consider one queue manager as local or locally hosted. And another queue manager as remote or remotely hosted ( in a different system/server).
+        <br>On the local queue manager we need to create a remote queue, a transmission queue and a sendig channel. And on the remote queue manager, we need to create a receiving channel and the queue where the message would be received.
+        <br>The queue of the remote queue manager "local" or "local queue" to the remote queue manager.
+        <br> On the local queue manager we need to create a remote queue which will have the definition of the local queue of the remote queue manager.
+        <br>
+
+
+      </p>
+    </div>
+
+    <div class="chapterblock">
+      <h3 class="chapter">Chapter - ??</h3>
+      <p class="textcontent">
+
+      </p>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "browser": "mozilla"
+}
+{
+  "no-browser": true
+}
+{
+  "entry-file": "index.html"
+}
+# {
+#   "root": "C:\\DEB\\myGitRepos\\djd-code-studio.github.io\\"
+# }
