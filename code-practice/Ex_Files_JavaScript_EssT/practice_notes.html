@@ -1,0 +1,129 @@
+<html>
+
+<head></head>
+
+<body>
+  <pre>
+    <code>
+Exercise 03_05
+===============
+script.js:11 true
+var a = 5;
+var b = 5;
+var theNumbersMatch
+
+if ( a == b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+// Result is - true
+
+var a = 5;
+var b = 6;
+var theNumbersMatch
+
+if ( a == b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+// Result is - false
+
+// The current values of the different variables
+b
+6
+a
+5
+theNumbersMatch
+false
+
+
+var a = 5;
+var b = "5";
+var theNumbersMatch
+
+if ( a == b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+// Result is - true. == does not differentiate if the comparison is between a number and a string.
+
+var a = 5;
+var b = "5";
+var theNumbersMatch
+
+if ( a === b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+// Result is - false. === does differentiate between a number and a string
+
+var a = "5";
+var b = "5";
+var theNumbersMatch
+
+if ( a == b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+VM60:11 true
+undefined
+var a = "5";
+var b = "5";
+var theNumbersMatch
+
+if ( a === b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+VM62:11 true
+undefined
+var a = "5";
+var b = "6";
+var theNumbersMatch
+
+if ( a == b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+VM64:11 false
+undefined
+var a = "5";
+var b = "6";
+var theNumbersMatch
+
+if ( a === b ) {
+    theNumbersMatch = true;
+} else {
+    theNumbersMatch = false;
+}
+
+console.log(theNumbersMatch);
+VM65:11 false
+undefined
+
+  </code>
+</pre>
+</body>
+
+</html>
