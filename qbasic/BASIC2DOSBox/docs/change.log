@@ -1,0 +1,9 @@
+
+BASIC 2 DOSBox v1.1 - new features and changes (2016-03-15):
+
+Added: QBasic 1.1 Installation
+Added: Various QBasic Demo Files (optional)
+Added: Additional entry in each config file: directory named _floppy will always be mounted as Floppy Drive A.
+
+Changed: QuickBasic 4.5 [complete] including all Example Files and Demos
+========================================================================

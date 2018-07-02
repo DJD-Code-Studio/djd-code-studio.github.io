@@ -1,0 +1,461 @@
+.TOPIC:
+Contents
+The Visual Basic for MS-DOS Help Toolkit makes it easy to add
+hypertext Help to your applications.  The text you are reading
+now is a Helpfile.  The Help Toolkit is written entirely in
+Visual Basic and can be modified.  Help files are standard ASCII
+files that can be edited with most text editors and even by
+Visual Basic itself.
+
+Click the mouse over one of the topics below for more
+information.  Or press TAB to select a topic then press ENTER
+to jump to it.
+
+Creating and Editing Help files
+Adding Help to Your Applications
+Using Help
+Customizing the Help Toolkit
+.TOPIC:
+Creating and Editing Help Files
+To create a new Help file:
+
+1.  Determine which topics a user might want Help with.
+2.  Start any text editor that reads and writes ASCII files.
+3.  Create a topic named Contents and type a table of
+    contents below.  See Creating and Editing Topics.
+    Note that the Contents command button will not work
+    correctly unless you include a topic named Contents.
+4.  Every entry in the table of contents should be a link
+    to a Help topic.  See Creating Links
+5.  Create a Help topic for every link in the table of
+    contents.  See Creating and Editing Topics
+6.  Every Help topic can contain links to other Help topics.
+7.  Help topics do not need to be listed in the table of
+    contents.
+
+To edit an existing Help file:
+NOTE:  The Help Toolkit cannot access Microsoft .HLP files.
+
+1.  Open the Help file in a text editor that reads and writes
+    ASCII files.
+2.  Modify Links and Topics as described above.
+
+See Example Help File
+.TOPIC:
+Creating and Editing Topics
+The Help Toolkit distinguishes Help topics from ordinary
+text by requiring that all topics are formatted in a
+specific way.
+
+1.  The word TOPIC must be on a line by itself, preceeded
+    by a period (.) and followed by a colon (:).  TOPIC
+    must be in uppercase.
+2.  The period must be the first character on the line.
+3.  Only spaces are allowed after the colon.
+4.  The name of the topic itself must be on the line
+    immediately below the .TOPIC: statement.
+5.  The topic text should begin on the line after the
+    name of the topic.
+6.  The Help Toolkit will not word wrap text.  Use the
+    ENTER key to break text into reasonable length lines.
+    64 character lines work well because the Help window
+    defaults to 66 characters wide.
+7.  The next topic should begin immediately after the last
+    line of the current topic.
+
+For example, the following would be a valid topic except
+that the period is the second character on the line not the
+first.
+
+ .TOPIC:
+This is a help topic name
+This is the first line a Help topic.
+.
+.
+.
+.
+This is the last line of a Help topic.
+
+See Creating Links   Example Help File
+.TOPIC:
+Creating Links
+Links are hot spots that a Help user clicks on to jump
+to a Help topic.  Links are ordinary text surrounded by
+special triangle characters (ASCII codes 16 and 17).
+
+Links and Topics must have exactly the same name or the
+Help Toolkit will not be able to find a Topic when a Link
+is clicked.
+
+For example, click on Valid Help Topic to see how Links
+jump to new Topics.  And click on Invalid Help Topic to
+see what happens if you create a Link without a matching
+Topic.
+
+See Creating and Editing Topics
+.TOPIC:
+Adding Help to Your Applications
+Necessary Files
+---------------
+You must add the following files to your project to use
+the Help Toolkit:
+
+1.  HELP.BAS
+2.  HELPF.FRM
+3.  HELPUTIL.FRM
+
+All files that call Help Toolkit routines must also have
+the following statement at the module level:
+
+'$INCLUDE: 'HELP.BI'
+
+Calling Help Toolkit Routines
+-----------------------------
+Required Steps:
+
+1.  Initialize the Help system by calling the
+HelpRegister <HelpFileName$> procedure.  You should do this
+when your application starts.
+
+2.  Display Help topics or the table of contents by
+calling HelpShowTopic <HelpTopicName$>.  HelpTopicName$
+should be "Contents" to show the table of contents.
+
+3.  Call HelpClose just before your application ends.
+NOTE:  You must call HelpClose during a Form_Unload
+event if your application ends when the last form is
+closed rather than by executing an END statement.
+Your application will not end if you fail to do this
+because frmHelpMain is still LOADED although invisible.
+
+Optional:
+1.  Call HelpSetOptions to set Help colors and show/hide
+specific Help command buttons after you call HelpRegister.
+See Help Toolkit Procedures for details.
+
+2.  Call HelpSearch to open Help's Search dialog.  Many
+applications have a Search item under their Help menu.
+
+See Example Help Toolkit Application and
+    Help Toolkit Procedures for detailed information.
+.TOPIC:
+Valid Help Topic
+You jumped to this topic by clicking the Valid Help Topic
+link.
+
+Click ---> Creating Links or choose the Back command button
+to return.
+.TOPIC:
+Customizing the Help Toolkit
+You can add or remove functionality from the Help Toolkit
+by changing the code in the following files:
+
+1.  HELP.BAS
+2.  HELPF.FRM
+3.  HELPUTIL.FRM
+
+HELP.BAS contains all the application callable procedures
+such as HelpShowTopic and HelpRegister.
+
+HELPF.FRM is the main Help form.  It contains the code
+required to display and scroll through Help topics.  It
+also has the code used to detect mouse clicks (to jump Links)
+and keyboard support.
+
+HELPUTIL.FRM is a form that serves as the Search dialog, the
+History dialog, and the Copy dialog.  It is called from
+HELPF.FRM and HELP.BAS.  The look of the form is controlled
+entirely from the cmdButtonBar_Click routine in HELPF.FRM and
+the HelpSearch routine in HELP.BAS.
+
+HELPF.FRM and HELP.BAS use the HELP.BI INCLUDE file.
+
+See Adding Help to Your Applications
+.TOPIC:
+Example Help File
+The following is an example of a small Help file.  Note that
+real Help files must be flush left.  This example is indented
+one character to stop the Help Toolkit from processing .TOPIC:
+statements.  A real Help file would also have ASCII 16 and 17
+characters in place of the > and < symbols used below.
+
+ .TOPIC:
+ Contents
+ Welcome to Bob's Accounting System version 7.1
+
+ <Introduction>
+ <Adding New Accounts>
+ <Ordering Additional Modules>
+ .TOPIC:
+ Introduction
+ Bob's Accounting System is specificially designed for small
+ business accounting.  It includes modules for <Accounts Payable>
+ and <Accounts Receivable>.  Other modules may be purchased
+ seperately.  See <Ordering Additional Modules>
+ .TOPIC:
+ Adding New Accounts
+ Choose New from the Accounts menu.
+ You can also press F8.
+
+ Note that Bob's Accounting System can store as many accounts
+ as disk space allows.
+ .TOPIC:
+ Accounts Payable
+ Access the A/P module through the Payables menu.
+
+ Note that A/P entries are automatially added to the general
+ ledger when you exit Bob's Accounting System.
+ 
+ See <Accounts Receivable>
+ .TOPIC:
+ Accounts Receivable
+ Access the A/P module through the Receievables menu.
+
+ Note that A/R entries are automatially added to the general
+ ledger when you exit Bob's Accounting System.
+
+ See <Accounts Payable>
+ .TOPIC:
+ Ordering Additional Modules
+ You can call (123) 555-5555 between 9 am and 5 pm to
+ inquire about new modules.  New modules such as tax, benefits,
+ and inventory are scheduled to be ready later this year.
+
+See Creating and Editing Help files
+.TOPIC:
+Example Help Toolkit Application
+The following shows how the Help Toolkit procedures should be
+added to an application.  Assume the application is one form
+with menu controls for Help|Contents, Help|Search, and
+Help|Using Help.  It also has a Text control named txtFileName
+and a check box named ckReadOnly.
+
+' Module-level
+'$INCLUDE: 'HELP.BI'
+DIM SHARED HelpLoaded%
+
+SUB Form_Load ()
+    HelpRegister "MYHELP.TXT" , HelpLoaded%
+
+    ' HelpLoaded% is set to TRUE (-1) if HelpRegister
+    ' was successful or to FALSE (0) if it failed.
+    IF HelpLoaded% = FALSE THEN
+        ' Ensure that Help menu choices cannot
+        ' be selected.
+        mnuHelpContents.Enabled = 0
+        mnuHelpSearch.Enabled = 0
+        mnuHelpUsingHelp.Enabled = 0
+    END IF
+END SUB
+
+SUB Form_Unload ()
+    HelpClose
+END SUB
+
+SUB mnuHelpContents_Click ()
+    HelpShowTopic "Contents"
+END SUB
+
+SUB mnuHelpSearch_Click ()
+    HelpSearch
+END SUB
+
+SUB mnuHelpUsingHelp_Click ()
+    HelpShowTopic "Using Help"
+END SUB
+
+SUB txtFileName_KeyUp (KeyCode AS INTEGER, Shift AS INTEGER)
+    IF KeyCode = 112 AND HelpLoaded% THEN 'F1 Key
+        HelpShowTopic "File Name"
+    END IF
+END SUB
+
+SUB ckReadOnly_KeyUp (KeyCode AS INTEGER, Shift AS INTEGER)
+    IF KeyCode = 112 AND HelpLoaded% THEN 'F1 Key
+        HelpShowTopic "Read Only"
+    END IF
+END SUB
+
+See Adding Help to Your Applications
+.TOPIC:
+Using Help
+Note that the following text is appropriate for adding
+to your own Help files.  A user should be able to access
+Using Help from the Help menu in your application.
+
+See Example Help Toolkit Application
+============================================================
+
+Selecting a Help link:
+----------------------
+With a mouse - click on phrases outlined by two triangles.
+With the keyboard - Press TAB or Shift-TAB to select a link.
+   Press ENTER to jump to that topic.
+
+Scrolling the Help window:
+--------------------------
+With a mouse - click on the horizontal or vertical scroll
+   bars.
+With the keyboard - press the cursor navigation keys.
+
+Closing the Help window:
+------------------------
+With a mouse - double click on the window's control box icon.
+With the keyboard - press Ctrl-F4.
+
+Command Buttons:
+----------------
+Applications may use one or more of the following command
+buttons.  Use a mouse to click a button or press the letter
+mentioned below.
+
+Contents - displays a table of contents for the application's
+   Help.  Press C to select Contents.
+
+Search -  opens a dialog box that lists all available Help
+   topics.  Select a topic from the list box and press ENTER.
+   Press S to select Search.
+
+Back - jumps to the last Help topic viewed. Press B to select
+    Back.
+
+History - lists the last 20 Help topics viewed.  Jump to a
+    topic by selecting from the list box and pressing ENTER.
+    Press T to select History.
+
+Copy - Copies the contents of the current Help topic into
+   an edit area.  Select the text you want copied to the
+   Clipboard and choose Copy.  Choosing Copy without selecting
+   any text in the edit area copies the entire Help topic to
+   the Clipboard.
+   Press P to select Copy.
+.TOPIC:
+Help Toolkit Procedures
+Five procedures in HELP.BAS give you access to all of
+Help Toolkit functions.
+
+HelpRegister <HelpFileName$> , Success%
+-----------------------------------------
+HelpRegister opens the requested Help file and searches for
+all Help topics.  The Help topics and their file positions
+are stored in an array for later use.  The file itself remains
+open until you call the HelpClose routine (below).
+HelpRegister is normally called at application initialization
+(e.g. Form_Load).
+
+You must call HelpRegister before showing any Help topics.
+
+HelpFileName$ is the name of the help file required by
+your application.  It can be any valid MS-DOS file name.
+You must include the appropriate extension (.HLP or .TXT
+for example).  Note that the Help Toolkit will NOT search
+your path for the file so it may be necessary to supply a
+fully qualified file name (e.g. "C:\MYAPP\MYHELP.TXT").
+
+Success% will be set to TRUE if the Help file was
+successfully registered and to FALSE otherwise.  The Success%
+flag should be checked before making subsequent Help Toolkit
+calls to prevent run-time errors.
+
+HelpShowTopic TopicName$
+------------------------
+Calling HelpShowTopic with a valid TopicName$ causes the
+Help Toolkit to display the text for TopicName$.  The Help
+form will be restored to its former size and location if it
+is minimized when HelpShowTopic is called.
+
+TopicName$ must be the name of a Help topic.  An error
+will occur if the Help Toolkit cannot find the TopicName$.
+
+HelpRegister must be called before calling HelpShowTopic but
+it is not necessary to call HelpRegister before every
+HelpShowTopic.
+
+HelpSearch
+----------
+HelpSearch opens the Help Toolkit topic search dialog box.
+The Help form will display the selected topic unless the
+user chooses the Cancel button.
+
+HelpRegister must be called before calling HelpSearch but it
+is not necessary to call HelpRegister before every HelpSearch.
+
+HelpClose
+---------
+HelpClose closes the Help file and UNLOADs the Help form.
+Call HelpClose before you end your application.  HelpClose
+should always be called when your application's last
+form is being unloaded.
+
+HelpSetOptions BackColor%,ForeColor%,DialogBackColor%,DialogForeColor%,ButtonColor%,SelectColor%,Flags%
+------------------------------------------------------------------------------------
+This is an optional routine that makes it easy to customize
+the look of the Help form.  You cannot call this procedure
+before you call HelpRegister.  The Help Tookit will use the
+default values listed below if you do not call this procedure.
+
+BackColor% is a value between 0 and 15 that specifies the text
+background color on the Help form.  Default is 7 (gray).
+
+ForeColor% is a value between 0 and 15 that specifies the text
+foreground color on the Help form.  Default is 0 (black).
+
+DialogBackColor% is a value between 0 and 15 that specifies
+the background color of the Help dialog boxes (Search, History,
+and Copy).  Default is 7 (gray).
+
+DialogForeColor% is a value between 0 and 15 that specifies
+the foreground color of the Help dialog boxes (Search, History,
+and Copy).  Default is 0 (black).
+
+ButtonColor% is a value between 0 and 15 that specifies the
+command button background color on the Help form.
+Default is 7 (gray).
+
+SelectColor% is a value between 0 and 15 that specifies the
+foreground color of Help links selected using the TAB key.
+Default is SCREEN.CONTROLPANEL(0) (AccessKey Color).
+
+Flags% is a bit field that sets the VISIBLE status of the
+five command buttons and enables other Help Toolit options.
+Add the values below to show buttons and enable functions.
+
+    Function               Value    Default
+    ---------------------  -----    -------
+    ESC Closes Help            1       0
+    UNLOAD Help at Form Close  2       0
+    No Contents Button         4       0
+    No Search Button           8       0
+    No Back Button            16       0
+    No History Button         32       0
+    No Copy Button            64       0
+
+    For example, Flags = 65 would allow ESC to close Help
+    and hide the Copy button.
+    
+    Space is only reserved at the top frmHelpMain if at least
+    one button is visible.
+
+    Buttons normally to the right of missing buttons
+    will shift to the left to fill gaps.
+
+    The Help Toolkit will automatically call HelpRegister to
+    re-open the Help file if HelpShowTopic or HelpSearch is
+    called after the Help form has been unloaded.  This can
+    only happen if:
+        1.  Unload on Form Close is TRUE and the user closed
+            the Help form.  Or
+        2.  An error such as "Insufficient Memory to Display
+            Help" caused Help to close itself.
+    
+    Registering a Help file can take some time so Unload at
+    Form Close should be set to FALSE unless:
+        1.  The Help Toolkit is running standalone (as it is
+            now).  Setting Unload at Form Close to TRUE
+            allows the application to end when the Help
+            form is closed.
+        2.  Memory is extremely constrained.
+
+See Adding Help to Your Applications and
+    Example Help Toolkit Application
+

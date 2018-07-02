@@ -1,0 +1,479 @@
+
+                           Disk Contents for
+              Microsoft (R) Visual Basic (TM) for MS-DOS (R)
+                   Professional Edition Version 1.00 
+
+              Copyright (C) 1982-1992 Microsoft Corporation
+
+This file contains a complete list of all files and directories on the 
+distribution disks provided with this product. Files are grouped by
+product component, numbers in parentheses indicate the disk number on which
+the file is found.
+
+==============================================================================
+Files on the distribution disks are compressed (indicated by a "$" in the
+file extension) and must be decompressed before they are used. The Setup
+program on disk 1 decompresses files as they are installed. A separate file
+decompression utility (DECOMP.EXE) located on disk 1 is provided for manual 
+file decompression. The following table displays the compressed/uncompressed 
+file extension mapping scheme:
+
+    Compressed File Extension:        Uncompressed File Extension:
+            *.AS$               -             *.ASM
+            *.BA$               -             *.BAS
+            *.BI$               -             *.BI
+            *.BT$               -             *.BAT
+            *.C$                -             *.C
+            *.CO$               -             *.COM
+            *.CT$               -             *.CTX
+            *.DL$               -             *.DLL
+            *.EX$               -             *.EXE
+            *.FO$               -             *.FON
+            *.FR$               -             *.FRM
+            *.H$                -             *.H
+            *.HL$               -             *.HLP
+            *.IC$               -             *.ICO
+            *.IN$               -             *.INC
+            *.LI$               -             *.LIB
+            *.MA$               -             *.MAK
+            *.MD$               -             *.MDB
+            *.OB$               -             *.OBJ
+            *.PI$               -             *.PIF
+            *.QL$               -             *.QLB
+            *.SC$               -             *.SCN
+            *.SO$               -             *.SOB
+            *.SY$               -             *.SYS
+            *.TX$               -             *.TXT
+            *.XL$               -             *.XLM
+			   
+An example of using DECOMP.EXE to decompress a single file is as follows:
+
+C:\> DECOMP A:BC.EX$ C:\VBDOS\BC.EXE
+
+This will decompress the BC.EX$ file from the distribution disk in drive a:
+to the file BC.EXE in the C:\VBDOS directory.
+
+This package comes with a number of demonstration and utility programs
+written in Basic. These files are for informational and recreational
+purposes only, and Microsoft makes no warranties, either expressed or
+implied, as to their suitability for specific purposes or their correctness,
+accuracy, or reliability. The entire risk as to the results and performance
+of the software is assumed by you.
+==============================================================================
+
+Installation Files
+------------------
+(1)  READNOW.TXT      Immediate installation instructions.
+(1)  SETUP.EXE        Visual Basic for MS-DOS installation program
+(1)  VBDOS.INF        Setup data file
+(1)  SETUP.INI        Setup initialization file
+(1)  DECOMP.EXE       Microsoft Decompression Utility; used for decompressing
+                      individual files from the distribution disks
+(1)  ALTSETUP.BAT     Batch install file for use if SETUP.EXE fails.
+
+
+Text Files
+----------------
+(1)  PACKING.TXT      List and description of all files provided
+(1)  README.TXT       Product notes and documentation corrections
+(1)  COMPAT.TXT       Visual Basic compatibility notes
+
+
+Development Tools
+-----------------
+(1)  VBDOS.EXE        Visual Basic for MS-DOS programming environment
+(1)  VBDOS.PIF        Windows information file for VBDOS.EXE
+(1)  VBDOS.ICO        Windows icon for VBDOS.EXE
+
+(1)  FD.EXE           Visual Basic for MS-DOS Form Designer
+
+(1)  BC.EXE           Visual Basic for MS-DOS Compiler
+
+(4)  FT.EXE           Visual Basic Binary Form Translator
+(3)  TRNSLATE.EXE     Visual Basic Project Translator; Windows
+                      application that requires the Visual Basic
+                      for Windows run-time DLL
+
+
+Help and Tutorial
+-----------------
+(3)  VBDOS.HLP        Visual Basic online Help
+(1)  VBDPSS.HLP       Visual Basic Knowledgebase online Help
+(7)  CV.HLP           Microsoft CodeView online Help
+(2)  ADVISOR.HLP      "
+
+(1)  LEARN.EXE        Visual Basic for MS-DOS Tutorial program
+(1)  LEARN.SOB        Support file for tutorial
+(1)  LEARN.SCN        "
+(1)  LEARN.CTX        "
+
+
+Libraries
+-----------------
+(3)  VBDRT10E.LIB     Run-time module library: 80x87 or emulator math;
+                      used for creating executable files requiring the
+                      Visual Basic run-time module (VBDRT10E.EXE)
+(7)  VBDRT10E.EXE     Run-time module: 80x87 or emulator math; required
+                      to run executable files created with VBDRT10E.LIB
+(4)  VBDCL10E.LIB     Stand-alone library: 80x87 or emulator math;
+                      used for creating stand-alone executable files
+(5)  VBDRT10A.LIB     Run-time module library: alternate math;
+                      used for creating executable files requiring the
+                      Visual Basic run-time module (VBDRT10A.EXE)
+(5)  VBDRT10A.EXE     Run-time module: alternate math; required to
+                      run executable files created with VBDRT10A.LIB
+(4)  VBDCL10A.LIB     Stand-alone library: alternate math;
+                      used for creating stand-alone executable files
+
+(3)  VBDA10.LIB       Support library for creating custom run-time modules
+(3)  VBDC10.LIB       "
+(7)  VBDE10.LIB       "
+(6)  VBDL10.LIB       "
+
+(1)  VBDOS.LIB        Stand-alone library containing support routines
+                      for MS-DOS system calls
+(1)  VBDOS.QLB        Quick library containing support routines for
+                      MS-DOS system calls
+(5)  VBDOS.BI         Include file for programs that call any of the
+                      routines in VBDOS.LIB
+(2)  VBDOSQLB.LIB     Library of support routines for creating Quick
+                      libraries
+
+
+ISAM
+-----------------
+(5)  PROISAMD.LIB     ISAM library used in conjunction with stand-alone
+                      programs (compiled with /O)
+(6)  PROISAMD.EXE     ISAM Terminate-and-Stay Resident (TSR) program
+                      that provides full ISAM file creation and access from
+                      within the programming environment
+(5)  PROISAM.EXE      ISAM Terminate-and-Stay Resident (TSR) program
+                      that provides only ISAM file access from
+                      within the programming environment
+(1)  ISAMCVT.EXE      ISAM conversion utility
+(7)  ISAMIO.EXE       ISAM ASCII import/export utility
+(6)  ISAMPACK.EXE     ISAM file compacting utility
+(5)  ISAMREPR.EXE     ISAM repair utility
+
+
+Utilities
+----------------
+(1)  LINK.EXE         Microsoft Segmented-Executable Linker; used to create
+                      executable files and Quick libraries
+(2)  LIB.EXE          Microsoft Library Manager; used to create
+                      stand-alone (.LIB) libraries
+
+(2)  CV.EXE           Microsoft CodeView Debugger
+(2)  CV.ICO           Windows icon for CV.EXE
+(2)  CVPACK.EXE       CodeView EXE packing utility
+(4)  EED1CAN.DLL      CodeView expression evaluator for ANSI C
+(2)  EED1CXX.DLL      CodeView expression evaluator for C++
+(2)  EMD1D1.DLL       CodeView MS-DOS execution model
+(2)  SHD1.DLL         CodeView Symbol handler
+(2)  TLD1LOC.DLL      CodeView local transport layer
+
+(2)  BUILDRTM.EXE     Custom run-time module and run-time module library
+                      creation utility
+
+(3)  TRACE.EXE        MOVE overlay performance analysis utility
+(2)  VBDTRACE.LIB     Debug version of MOVE overlay support used to generate
+                      overlay performance information in executable programs
+
+(2)  MOUSE.COM        Microsoft Mouse driver
+(1)  FIXSHIFT.COM     TSR program that fixes a bug in the ROM BIOS of some
+                      machines with keyboards that have an extra set of
+                      arrow keys, in addition to those on the numeric
+                      keypad
+(1)  MSHERC.COM       Driver file that allows you to write programs using
+                      screen mode 3 for graphics output on computers
+                      equipped with a Hercules(R) Graphics Card, Graphics 
+                      Card Plus, Hercules InColor Card, or 100%-compatible
+                      clones of these graphics cards 
+(1)  PATCH87.EXE      Utility that installs a patch for DOS 3.20 which 
+                      eliminates a problem with floating-point math in DOS
+                      3.20. The problem arises ONLY on systems that boot from
+                      a hard disk drive, have a math coprocessor (such as an
+                      8087 chip), and run programs that use floating-point math
+
+
+Source Profiler
+----------------
+(7)  VBDPROF.EXE      Visual Basic front-end to Microsoft Source Profiler
+(2)  PROFILE.EXE      Microsoft Source Profiler
+(4)  PREP.EXE         Source Profiler Preparation Utility
+(4)  PLIST.EXE        Source Profiler Report Generation Utility
+(3)  FCOUNT.BAT       Function profiling with counting information
+(3)  FCOVER.BAT       Function profiling with coverage information
+(3)  FSAMPLE.BAT      Sampled function profiling with timing information
+(3)  FTIME.BAT        Function profiling with timing information
+(3)  LCOUNT.BAT       Line profiling with counting information
+(3)  LCOVER.BAT       Line profiling with coverage information
+(3)  LSAMPLE.BAT      Sampled line profiling with timing information
+(3)  LTIME.BAT        Line profiling with timing information
+(2)  PROFILER.XLM     Microsoft Excel macro that creates graphs
+                      from tab-delimited profiler reports
+(2)  QSORT.BAS        Source Profiler example program
+(2)  QSORT.PCF        Profiler command file for QSORT example
+(2)  JABBER.TXT       Sample input file for QSORT example
+
+
+Toolkits
+----------------
+(4)  CMNDLG.BAS       Common Dialog Toolkit source file
+(4)  CMNDLGF.FRM      "
+(4)  CMNDLG.BI        "
+(4)  CMNDLG.MAK       "
+(4)  CMNDLG.LIB       Common Dialog Toolkit library: 80x87 or emulator math
+(4)  CMNDLG.QLB       Common Dialog Toolkit Quick library: 80x87 or
+                      emulator math
+(4)  CMNDLGA.LIB      Common Dialog Toolkit library: alternate math
+
+(2)  CHART.BAS        Presentation Graphics Toolkit source file
+(2)  CHARTASM.ASM     "
+(2)  CHART.BI         "
+(2)  CHARTASM.OBJ     Presentation Graphics Toolkit assembly-language
+                      routines object module
+(2)  CHART.LIB        Presentation Graphics Toolkit library: 80x87 or
+                      emulator math
+(2)  CHART.QLB        Presentation Graphics Toolkit Quick library: 80x87
+                      or emulator math
+
+(4)  FINANCE.LIB      Financial Toolkit library: 80x87 or emulator math
+(4)  FINANCE.QLB      Financial Toolkit Quick library: emulator math
+(4)  FINANCEA.LIB     Financial Toolkit library: alternate math
+(2)  FINANCE.BI       Include file for Financial Toolkit
+
+(2)  FONT.BAS         Font Toolkit source file
+(2)  FONTASM.ASM      "
+(2)  FONT.BI          "
+(2)  FONTASM.OBJ      Font Toolkit assembly-language routines object module
+(2)  FONT.LIB         Font Toolkit library: 80x87 or emulator math
+(2)  FONT.QLB         Font Toolkit Quick library: 80x87 or emulator math
+(2)  FONTA.LIB        Font Toolkit library: alternate math
+(3)  COURB.FON        Cour font file (640x350)
+(3)  COURE.FON        Cour font file (640x480)
+(2)  HELVB.FON        Helv font file (640x350)
+(2)  HELVE.FON        Helv font file (640x480)
+(2)  TMSRB.FON        Tms Rmn font file (640x350)
+(2)  TMSRE.FON        Tms Rmn font file (640x480)
+
+(2)  HELP.BAS         Help Toolkit source file
+(2)  HELPF.FRM        "
+(2)  HELPUTIL.FRM     "
+(2)  HELP.BI          "
+(2)  HELP.MAK         "
+(2)  HELPDEMO.TXT     Sample Help file for Help Toolkit
+(2)  HELP.LIB         Help Toolkit library: 80x87 or emulator math
+(2)  HELP.QLB         Help Toolkit Quick library: 80x87 or emulator math
+(2)  HELPA.LIB        Help Toolkit library: alternate math
+
+(2)  MATH.BAS         Matrix Math Toolkit source: 80x87 or emulator math
+(2)  MATH.BI          "
+(2)  MATH.LIB         Matrix Math Toolkit library: 80x87 or emulator math
+(2)  MATH.QLB         Matrix Math Toolkit Quick library: 80x87 or emulator
+                      math
+(2)  MATHA.BAS        Matrix Math Toolkit source: alternate math
+                      (CURRENCY data type support removed)
+(2)  MATHA.BI         "
+(2)  MATHA.LIB        Matrix Math Toolkit library: alternate math
+
+(2)  MOUSE.BAS        Mouse Toolkit source file
+(2)  MOUSE.BI         "
+(2)  MOUSE.MAK        "
+
+(2)  SETUP.BAS        Setup Toolkit source file
+(2)  SETUPMSG.FRM     "
+(2)  SETUPOPT.FRM     "
+(2)  SETUPPTH.FRM     "
+(2)  SETUPSTS.FRM     "
+(2)  SETUP.MAK        "
+
+
+Custom Control Development Kit
+------------------------------
+(2)  CUSTGEN.EXE      Custom control template creation utility
+(4)  CUSTEVNT.ASM     Custom event code template sample: Assembler
+(4)  CUSTEVNT.BAS     Custom event code template sample: Basic
+(4)  CUSTEVNT.C       Custom event code template sample: C
+(4)  CUSTINCL.INC     Custom control property, event, and method constant
+                      definitions: Assembler
+(4)  CUSTINCL.BI      Custom control property, event, and method constant
+                      definitions: Basic
+(4)  CUSTINCL.H       Custom control property, event, and method constant
+                      definitions: C
+(4)  CUSTCALL.ASM     Custom callbacks code sample: Assembler
+(4)  CUSTCALL.BAS     Custom callbacks code sample: Basic
+(4)  CUSTCALL.C       Custom callbacks code sample: C
+(4)  CUSTREG.ASM      Custom control sample registration routine (must be
+                      written in Assembler)
+(2)  SPIN.QLB         Spin custom control
+(2)  SPIN.LIB         "
+(2)  SPINREG.ASM      Spin custom control source file
+(2)  SPIN.BAS         "
+(2)  SPINDEMO.FRM     Example program containing Spin custom control
+(2)  SPINDEMO.MAK     "
+
+
+Stub Files
+--------------
+(3)  87.LIB           No coprocessor emulation - for use with programs to
+                      run only on machines with an 8087, 80287, or 80387
+                      math coprocessor chip
+(3)  NOCGA.OBJ        No CGA graphics - for use with programs that use a
+                      SCREEN statement, but do not use any CGA screen modes
+(3)  NOCOM.OBJ        No communication - for use with programs that use some
+                      devices but do not use COMn:
+(3)  NOEDIT.OBJ       No full-power INPUT editor - limits editing with an
+                      INPUT statement to Enter and Backspace characters only
+(3)  NOEGA.OBJ        No EGA graphics - for use with programs that use a
+                      SCREEN statement, but do not use any EGA screen modes
+(3)  NOEVENT.OBJ      No EVENT support - for use with custom run-time 
+                      modules that do not use any event-trapping statements
+(3)  NOFLTIN.OBJ      No floating point input - for use with programs that
+                      use INPUT, VAL, and READ without floating-point support
+(3)  NOFORMS.OBJ      No form support - for creating custom run-time modules
+                      for programs that do not require forms support
+(3)  NOGRAPH.OBJ      Combination of NOCGA, NOEGA, NOVGA, and NOHERC for use
+                      with custom run-time modules.
+(3)  NOHERC.OBJ       No Hercules graphics - for use with programs that use a
+                      SCREEN statement, but do not use any Hercules screen modes
+(3)  NOISAM.OBJ       No ISAM support - for creating custom run-time modules
+                      for programs that do not that require ISAM support
+(3)  NOLPT.OBJ        No line printer - for use with programs that use
+                      some devices but do not use LPTn:
+(2)  NOOGA.OBJ        No Olivetti graphics - for use with programs that use a
+                      SCREEN statement, but do not use any Olivetti screen modes
+(2)  NOTRNEM.LIB      No transcendental math - for use with programs that
+                      require no transcendental functions
+(2)  NOVGA.OBJ        No VGA graphics - for use with programs that use a
+                      SCREEN statement, but do not use any VGA screen modes
+(4)  SMALLERR.OBJ     Reduced error messages - link with programs to reduce
+                      the length of run-time error messages
+(4)  TSCNIO.OBJ       Text only I/O - link with programs that use
+                      text-only screen I/O
+
+
+Sample Applications
+-------------------
+(2)  CONSTANT.BI      Include file containing constant definitions for
+                      object property values
+
+(3)  BOOKLOOK.FRM     ISAM sample application
+(3)  BOOKCARD.FRM     "
+(3)  BOOKLIST.FRM     "
+(2)  BOOKSRCH.FRM     "
+(2)  BOOKSTCK.FRM     "
+(3)  BOOKGEN.BAS      "
+(3)  BOOKLOOK.BI      "
+(3)  BOOKLOOK.MAK     "
+(4)  BOOKS.MDB        Sample ISAM database for BOOKLOOK
+
+(6)  CALC.FRM         Calculator sample application
+(6)  CALC.MAK         "
+(6)  CALC.BI          "
+
+(2)  CHECK.FRM        Check register sample application
+(2)  CHECK.MAK        "
+
+(3)  CHRTDEMO.FRM     Presentation Graphics Toolkit sample application
+(3)  CHRTATTR.FRM     "
+(3)  CHRTDATA.FRM     "
+(3)  CHRTFONT.FRM     "
+(3)  CHRTTYPE.FRM     "
+(3)  CHRTSUBS.BAS     "
+(3)  CHRTDEMO.BI      "
+(3)  CHRTDEMO.MAK     "
+
+(6)  CLOCK.FRM        Clock sample application
+(6)  CLOCK.MAK        "
+(6)  CLOCK.BI         "
+
+(2)  CONTROLP.FRM     Control panel sample application
+(2)  CONTROLP.MAK     "
+(2)  CONTDRAW.BAS     "
+
+(2)  DEBUG.FRM        Debug output form
+
+(2)  FONTDEMO.FRM     Font Toolkit sample application
+(2)  FONTDEMO.MAK     "
+(2)  FONTDRAW.BAS     "
+
+(2)  GRAPHICS.FRM     Graphics sample application (charting and patterns)
+(2)  GRAPDRAW.BAS     "
+(2)  GRAPHICS.MAK     "
+
+(2)  NOTEPAD.FRM      Notepad sample application
+(2)  NOTEPAD.MAK      "
+(2)  NOTEPAD.BI       "
+(2)  NOTEHELP.TXT     Help file for NOTEPAD
+
+(2)  PGBAR.BAS        Bar chart sample application
+(2)  PGLINEMS.BAS     Line chart sample application
+(2)  PGPIE.BAS        Pie chart sample application
+(2)  PGSCAT.BAS       Scatter chart sample application
+
+(2)  QLBVIEW.FRM      Quick library contents viewer sample application
+(2)  QLBVIEW.MAK      "
+(2)  QLBVIEW.BI       "
+
+(3)  SEEK.FRM         File search sample application
+(3)  SEEK.MAK         "
+
+(3)  SORTDEMO.BAS     Sorting demonstration sample application
+(3)  SORTDEMO.MAK     "
+
+(2)  TORUS.FRM        Graphics sample application (palette animation)
+(2)  TORDRAW.BAS      "
+(2)  TORUS.MAK        "
+
+------------------------------------------------------------------------------
+ISAM character set and sorting order files.
+The files below are used by Setup to change the ISAM character set and 
+sorting order.  These files provide same functionality as their corresponding 
+files listed above but contain different ISAM character sets and sorting 
+orders (same files listed above contain character set and sorting order for 
+English, French, German, Italian, and Portuguese).  Refer to the sections 
+above for full descriptions of each file below.  The files below are used 
+to replace their corresponding files above when a different sorting order
+is chosen in Setup.  To change ISAM sorting order after you have installed the
+product, run Setup again and select the "Build Additional Libraries" option.
+------------------------------------------------------------------------------
+' Files for Dutch character set and sorting order
+(7)  VBDRT10A.2IB
+(4)  VBDRT10A.2XE
+(5)  VBDRT10E.2IB
+(5)  VBDRT10E.2XE
+(7)  ISAMCVT.2XE
+(7)  ISAMIO.2XE
+(7)  ISAMPACK.2XE
+(6)  ISAMREPR.2XE
+(5)  PROISAM.2XE
+(5)  PROISAMD.2IB
+(5)  PROISAMD.2XE
+
+' Files for Danish, Finnish, Icelandic, Norwegian, and Swedish character set 
+' and sorting order
+(5)  VBDRT10A.3IB
+(5)  VBDRT10A.3XE
+(5)  VBDRT10E.3IB
+(6)  VBDRT10E.3XE
+(7)  ISAMCVT.3XE
+(7)  ISAMIO.3XE
+(7)  ISAMPACK.3XE
+(6)  ISAMREPR.3XE
+(6)  PROISAM.3XE
+(6)  PROISAMD.3IB
+(6)  PROISAMD.3XE
+
+' Files for Spanish character set and sorting order
+(5)  VBDRT10A.4IB
+(6)  VBDRT10A.4XE
+(6)  VBDRT10E.4IB
+(6)  VBDRT10E.4XE
+(7)  ISAMCVT.4XE
+(7)  ISAMIO.4XE
+(4)  ISAMPACK.4XE
+(6)  ISAMREPR.4XE
+(6)  PROISAM.4XE
+(6)  PROISAMD.4IB
+(6)  PROISAMD.4XE

@@ -1,26 +1,25 @@
 <html>
-
-<head>
-  <title>Internet Guide</title>
-  <link rel='stylesheet' type="text/css" href="../../styles/internet-guide.css">
-  </link>
+	<head>
+		<title>Internet Guide</title>
+		<link rel='stylesheet' type="text/css" href="../../styles/internet-guide.css">
+	</link>
 </head>
-
 <body>
-  <h1 id="page-title"> Flat list of URLs</h1> <br><br>
-  <div class="ForAllDivs" id="div0"></div>
-  <script>
-    function myUrlData(arr) {
-      var output = "";
-      var i = 0;
-      for (i = 0; i < arr.length; i++) {
-        output += '<a href="' + arr[i].url + '">' + arr[i].title + '</a><br />';
-      }
-      document.getElementById('div0').innerHTML = output;
-    }
-  </script>
-  <script src="./myUrlData.js"></script>
-
+	<h1 id="page-title"> Flat list of URLs</h1> <br><br>
+	<div class="ForAllDivs" id="div0"></div>
+	<!-- the function definiton below -->
+	<script>
+		function myUrlData(arr) {
+			var output = "";
+			var i = 0;
+			for (i = 0; i < arr.length; i++) {
+				output += '<a href="' + arr[i].url + '">' + arr[i].title + '</a><br />';
+			}
+			document.getElementById('div0').innerHTML = output;
+		}
+	</script>
+	
+	<!-- the function call -- the script tag loads the js file which has the function call embedded in it. The entire json data is in the parameter part of the function call -->
+	<script src="./myUrlData.js"></script>
 </body>
-
 </html>

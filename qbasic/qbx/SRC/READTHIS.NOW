@@ -1,0 +1,33 @@
+	   Welcome to the Microsoft BASIC Professional Development System
+	   --------------------------------------------------------------
+
+Before Setup: You MUST not have read-only BASIC libraries or QBX.INI files if
+	      you are updating or reinstalling a version of Microsoft BASIC.
+	      These files must be set to read/write before running Setup.
+
+SETUP:	      The Setup program is on distribution disk 1.  You MUST run Setup
+	      to install a fully functional copy of Microsoft BASIC 7.1, since
+	      many of the files are both compressed and in fragments which must
+	      be decompressed and linked together correctly.  Setup handles
+	      this process automatically.  You will need up to 14MB of hard
+	      disk space and 500KB of available RAM to run Setup successfully.
+
+SETUP /BATCH: Run Setup with the /BATCH option to make Setup run more quickly
+	      (Setup can take over an hour on a DOS 286 computer with default
+	      options).  To do this, first run Setup with the /BATCH option;
+	      then run the BUILD batch file that is created and left on the
+	      target drive.  Setup will copy and decompress the files; the
+	      BUILD batch file will construct all of the files as specified by
+	      your choices in Setup.
+
+README.DOC:   The README.DOC file is located on disk 1.  This file contains
+	      additional technical information and documentation corrections.
+
+PACKING.LST:  The PACKING.LST file is located on disk 1.  This file contains
+	      a complete list of all files and directories on the distribution
+	      disks as well as instructions on how to decompress individual
+	      files without running Setup.
+
+See the Getting Started manual for more information about installing and
+beginning to use this version of Microsoft BASIC Professional Development
+System.

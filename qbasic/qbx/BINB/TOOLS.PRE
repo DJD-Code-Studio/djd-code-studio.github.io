@@ -1,0 +1,238 @@
+; TOOLS.PRE - After you install Microsoft BASIC, move this file
+; to a directory named in your INIT environment variable and append
+; it to your TOOLS.INI file. If TOOLS.INI does not exist, you
+; can rename this file TOOLS.INI.
+;
+; Several Microsoft applications use TOOLS.INI to determine their
+; initial settings. The following table lists the Microsoft
+; applications shipped with BASIC that use this file and the labels
+; that these applications look for within TOOLS.INI to find their
+; initialization information.
+;
+;  Application			 Looks for these labels
+;  ----------------------	 -----------------------------
+;  Programmer's WorkBench        [pwb], [pwb - <tag>]
+;  CodeView			 [cv], [cvp], [cv cvp]
+;  QuickHelp			 [qh]
+;  NMAKE			 [nmake]
+;
+;  See the online Help on TOOLS.INI for more information about
+;  this file and how to use it to customize applications.
+;
+;
+[pwb]
+; These are general assignments and settings for the Programmer's
+; WorkBench. These settings take effect if you start PWB without
+; the /DT option. Settings in the language-specific sections of
+; TOOLS.INI take precedence over these settings when you load a
+; file with one of the extensions included in the language-specific
+; label. See the label [pwb - pwbbasic] for the BASIC settings.
+;
+; The settings in CURRENT.STS or <makefile>.STS take precedence
+; over the PWB settings in TOOLS.INI. For more information, see
+; the online Help on CURRENT.STS.
+;
+; Predefined and example Programmer's Work Bench Macros
+;
+; assignments
+; Displays the current assignments pseudo-file. (Formerly called "help").
+;
+assignments:=arg "?" assign <
+assignments:f10
+;
+; rawoutput
+; Switches the current window to the compile log to view the raw compile
+; output.
+;
+rawoutput:=arg "<compile>" setfile
+rawoutput:alt+F3
+;
+; spell
+; Invokes the Microsoft Word 4.0 spelling checker on the current file. (Only
+; available under DOS).
+;
+spell:=arg "spell-am " curfile shell
+spell:ctrl+f7
+;
+; undotoggle
+; Toggling undo. Repeatedly executing this macro undoes and redoes the most
+; recent editing change.
+;
+undotoggle:=meta undo +> undo
+undotoggle:ctrl+bksp
+;
+undocount:20
+; Allows you to undo up to 20 previous edits.
+;
+;
+;
+; build switch examples
+;
+; The following are examples of error strings.  If messages output to the
+; compile window match these strings they will be counted and found by
+; nextmsg (Search.Next Error, etc.).  The compiler and utility messages 
+; will be added by the extensions.  If you do not load the extensions,
+; but want to match these messages in the compile window, add these to 
+; your tools.ini.
+;
+;
+;	pwbrmake
+build: message "^pwbrmake: [^U]+U[124]"
+;	bind
+build: message "^BIND : [^U]+U[124]"
+;	C
+build: message "^\\(\\:p\\)(\\(\\:z\\)) : [^C]+C[124]" file line
+build: message "^[^C]+C[124][0-9]+: "
+;	C or FORTRAN
+build: message "^[^D]+D[124][0-9]+ : "
+;	FORTRAN
+build: message "^\\(\\:p\\)(\\(\\:z\\)) : [^F]+F[124]" file line
+build: message "^[^F]+F[1234][0-9]+: "
+;	BASIC
+build: message "^\\(\\:p\\)([ \t]*\\(\\:z\\),[ \t]*\\(\\:z\\)) : " file line col
+;	MASM
+build: message "^\\(\\:p\\)(\\([0-9]+\\))[ \t]*:[ \t]*[^A]+A[12456]" file line
+;	general
+build: message "^fatal error"
+;	generic OS/2 system messages (SYS and NET are already in defaults)
+build: message "^[A-Z][A-Z][A-Z]\\:d\\:d\\:d\\:d:\\:b"
+build: language BASIC
+;
+;
+;   Default colors.
+;
+; The following are the color settings that the PWB uses by default.  On
+; some hardware configurations, the PWB may incorrectly identify your
+; monochrome video as color (or vice-versa).  If the PWB screen looks
+; wrong, try using the color set appropriate for your hardware
+;
+; Colors for a Color system
+;
+;	color:		background 07
+;	color:		hilitectrl 07
+;	color:		    greyed 78
+;	color:		   enabled 70
+;	color:		  disabled 78
+;	color:		     alert 70
+;	color:		 dialogbox 70
+;	color:		pushbutton 70
+;	color:		buttondown 07
+;	color:		   listbox 70
+;	color:		 scrollbar 70
+;	color:		  elevator 07
+;	color:		   menubox 70
+;	color:		      menu 70
+;	color:	      menuselected 07
+;	color:		menuhilite 7f
+;	color:	     menuhilitesel 0f
+;	color:	     itemhilitesel 0f
+;	color:	       dialogaccel 7f
+;	color:	    dialogaccelbor 7f
+;	color:		    shadow 08
+;	color:		      text 17
+;	color:		 highlight 1f
+;	color:		      info 3f
+;	color:		 selection 71
+;	color:		    border 07
+;	color:		    status 70
+;	color:		   scratch 07
+;
+;
+; Colors for a Monochrome system
+;
+;	color:		background 07
+;	color:		hilitectrl 07
+;	color:		    greyed 70
+;	color:		   enabled 70
+;	color:		  disabled 70
+;	color:		     alert 70
+;	color:		 dialogbox 70
+;	color:		pushbutton 70
+;	color:		buttondown 07
+;	color:		   listbox 70
+;	color:		 scrollbar 70
+;	color:		  elevator 07
+;	color:		   menubox 70
+;	color:		      menu 70
+;	color:	      menuselected 07
+;	color:		menuhilite 7f
+;	color:	     menuhilitesel 0f
+;	color:	     itemhilitesel 0f
+;	color:	       dialogaccel 7f
+;	color:	    dialogaccelbor 7f
+;	color:		    shadow 07
+;	color:		      text 07
+;	color:		 highlight 0f
+;	color:		      info 70
+;	color:		 selection 70
+;	color:		    border 07
+;	color:		    status 70
+;	color:		   scratch 07
+;
+;
+[pwb - pwbbasic]
+; These are the BASIC-specific PWB settings. You can use this
+; section to explicitly load PWB extensions and to set the
+; order in which Help files will be searched. For example:
+;
+;   load: c:\bc7\bin\pwbbasic.mxt;c:\bc7\bin\pwbhelp.mxt;c:\bc7\bin\pwbutils.mxt;c:\bc7\bin\pwbrowse.mxt
+;
+; This line loads the BASIC, Help, utilties, and Browser extensions explicitly.
+; If you start PWB with the /DA option, PWB will still load these extensions.
+; This helps prevent unneeded extensions from being loaded.
+;
+[pwb - pwbhelp]
+; This section contains specific controls for PWB Help. For example:
+;
+;   helpfiles:.bas .bi:c:\bc7\help\bas7*.hlp;c:\bc7\help\*.hlp
+;   helplist:no
+;
+; These lines change the search order of help files in PWB. By default,
+; the Microsoft Advisor online Help system searches the path in the
+; HELPFILE environment variable for a selected context. By using the
+; helpfiles: switch, you can specify which files will be searched
+; first based on the file extension of the current file. The helplist:
+; switch displays the first occurance of the topic, rather than
+; prompting when multiple occurances are found.
+;
+;
+[pwb - .TXT .DOC]
+; This section contains settings for editing files with the
+; file extensions indicated, in this case: .TXT and .DOC.
+; For example:
+;
+;   undocount:20
+;
+; This line would allow you to undo up to 20 previous edits.
+;
+[cv cvp]
+; These are the settings for CodeView in real and protected modes.
+; This label could be broken into [cv] and [cvp] if you wanted to
+; establish different settings for the two modes.
+;
+; The following lines show the syntax for the possible CodeView settings:
+;
+;   autostart:<cv-command>[;<cv-command>]...
+;   color: <name> <value>
+;   helpbuffers:[0|24|128]
+;   helpfiles:<cv-helppath>
+;   printfile:<file>
+;   statefileread:[y|n]
+;
+; See the online Help for TOOLS.INI for more information on configuring
+; CodeView in TOOLS.INI.
+;
+[qh]
+; These are the settings for QuickHelp. The following line shows the syntax
+; for the possible QuickHelp setting:
+;
+;   helpfiles:<qh-helppath>
+;
+[nmake]
+; These are the settings for NMAKE. You can place macros and
+; inference rules below this tag in the same format you would use in
+; an NMAKE description file.
+;
+; If a macro or inference rule is defined in both the TOOLS.INI file
+; and the description file, the definition in the description file
+; takes precedence.

@@ -1,0 +1,148 @@
+                                   COMPAT.TXT
+
+          Compatibility Notes for Visual Basic for MS-DOS and Windows
+
+                   (C) Copyright Microsoft Corporation, 1992
+
+This document contains miscellaneous programming differences between
+Visual Basic for MS-DOS (VB/MS-DOS) and Visual Basic for Windows (VB/Windows)
+that were too late-breaking to include in the printed documentation. See
+Appendix I, "Building Portable Applications," in the "Programmer's Guide"
+for more comprehensive information on this subject.
+
+Differences in Scope
+--------------------
+In VB/MS-DOS, shared array declarations cannot be "eclipsed" at the procedure
+level. This means that the following code behaves differently in VB/MS-DOS
+and VB/Windows:
+
+DIM SHARED Array%()
+CALL Initialize
+
+SUB Initialize ( )
+  DIM Array%(100)  ' In VB/Windows, creates a new Array%() that "eclipses"
+END SUB            ' the shared variable. In VB/MS-DOS, dimensions Array%.
+
+Menus and Timer Events
+----------------------
+In VB/MS-DOS, timer events are suspended while a menu control has focus.
+When the menu control loses focus, timer events resume. Timer events are
+not suspended in this way in VB/Windows.
+
+ERR Statement
+-------------
+In VB/MS-DOS, you cannot use the ERR statement to set error codes >255.
+To work around this, use ERROR to recreate the error and indirectly set
+the error code.
+
+Forms
+-----
+Setting BorderStyle to None (0) in VB/MS-DOS results in MinButton,
+MaxButton, and ControlBox being set to FALSE (0) at run-time. 
+In VB/Windows, these properties are not set to FALSE but retain the
+same values that are set at design-time.
+
+Clicking on disabled controls in VB/Windows results in a click event 
+being sent to the form. This does not occur in VB/MS-DOS. The click
+is ignored.
+
+VB/MS-DOS allows a form to be unloaded from within its RESIZE event 
+procedure. VB/Windows does not allow this (generates an error).
+
+File List Boxes
+---------------
+VB/Windows will return error 380 when setting the Pattern property of
+File List boxes to any of the following: ";", ":", or "\". VB/MS-DOS will
+not return an error but will assign this value to the Pattern property 
+and generate a PatternChange event. Both VB/Windows and VB/MS-DOS handle 
+other invalid pattern assignments (i.e. "=") in a similar manner (assign 
+the value to Pattern property and generate PatternChange event.
+
+VB/Windows will generate error 53 (File not found) when assigning a 
+non-existent file name to the FileName property of File List boxes. 
+VB/MS-DOS will not generate an error, but rather will parse the value 
+assigned to the FileName property as a value for the Pattern property, 
+a value for which no match will be found. To determine if a file exists, 
+either the DIR$ function or check that File1.FileName = "" and 
+File1.Pattern = <non-existent file> after the assignment.
+
+VB/Windows returns file names (FileName property) in lower case. VB/MS-DOS 
+returns file names in upper case.
+
+List Boxes
+----------
+In VB/MS-DOS, the selected item must always be visible within the list
+box. In VB/Windows, the selected item can be scrolled out of sight with
+the mouse. Thus in VB/MS-DOS, as you scroll the listbox with the mouse,
+the selected item will change to remain visible. This functions
+exactly like scrolling the list box with the keyboard cursor keys in
+either VB/MS-DOS or VB/Windows. 
+
+Text Boxes
+----------
+In VB/Windows, text boxes with horizontal scrollbars (no word wrap) will 
+still wrap text longer than 1023 characters. In VB/MS-DOS, text boxes with 
+horizontal scrollbars will not wrap text regardless of length.
+
+VB/MS-DOS text boxes (including text portion of combo box) do not support 
+word highlight with double mouse click. VB/Windows text boxes do support 
+this feature.
+
+Keywords
+--------
+VB/MS-DOS and VB/Windows support some different reserved words. Conflicts 
+may occur if a reserved word in VB/MS-DOS or VB/Windows is used as a variable 
+name in the other product (where it is not a reserved word). Replace all 
+occurances of these type of variable names with new names. A common example 
+of this is LIST (reserved in VB/MS-DOS, but not in VB/Windows).
+
+COMMAND$
+--------
+The case of the text returned by the COMMAND$ function is different in 
+VB/Windows and VB/MS-DOS. VB/MS-DOS returns an all upper case string while 
+VB/Windows returns the string in the same case the user provide it.
+
+Form/Control Allocation
+-----------------------
+In VB/MS-DOS, window structures for forms and controls remain allocated after an
+unload (form or control array element) until the last procedure in the
+current calling sequence ends and control returns to the top-most DOEVENTS 
+loop (either implicit or explicit). Form and control data space is freed 
+immediately after an unload however. 
+
+In VB/Windows, window structures are deallocated after the unload. This may 
+cause differences in the number of forms and controls that can be loaded 
+and unloaded within the current calling sequence depending on available 
+memory.
+
+ActiveControl and Disabled Controls
+-----------------------------------
+If you disable all of the controls on a form in code, SCREEN.ActiveControl
+returns the last enabled control in VB/MS-DOS. The same action returns an 
+error in VB/Windows. For example, if a form has one control named cmdExit, 
+this code produces different results in VB/MS-DOS and VB/Windows:
+
+cmdExit.Enabled = FALSE
+x% = SCREEN.ActiveControl.Enabled ' In VB/MS-DOS, x% = 0. In VB/Windows, 
+                                  ' causes error.
+
+In VB/Windows, Screen.ActiveControl returns an error if all the controls on
+a form are disabled. In VB/MS-DOS, SCREEN.ActiveControl returns the most
+recently enabled control if all the controls on a form are disabled.
+
+Loading Controls Passed to Procedures
+-------------------------------------
+VB/MS-DOS compiled programs, you cannot pass a control array element into a
+procedure, then load it from that procedure. For example, the following
+code generates the error "Control array element does not exist" if
+executed in a compiled program:
+
+LoadIt cmdButton(1)
+
+SUB LoadIt (X as CONTROL)
+  LOAD X
+END SUB
+
+Note that the preceding code will run in the VB/MS-DOS programming
+environment without an error. This difference occurs because compiled
+applications are "early bound."

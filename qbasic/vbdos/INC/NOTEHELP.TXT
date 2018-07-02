@@ -1,0 +1,241 @@
+.TOPIC:
+Contents
+
+SDI Notepad is a text editor that you can use to edit small
+text files, such as your CONFIG.SYS or AUTOEXEC.BAT file.
+
+ Procedures 
+ ----------
+ Using Help
+ Adding the Time and Date to Documents
+ Deleting Text
+ Finding Text
+ Formatting Text
+
+ Commands
+ --------
+ File Menu Commands
+ Edit Menu Commands
+ Search Menu Commands
+
+.TOPIC:
+Adding the Time and Date to Documents
+
+ To add the time and date to a document:
+
+ 1.  Open the document.
+ 2.  Move the insertion point to where you want the time and
+     date to appear.  
+         Or 
+     Select the text you want the time and date to replace.
+ 3.  From the Edit menu, choose Time/Date.
+
+ See: Edit Menu Commands
+
+.TOPIC:
+Deleting Text
+ 
+ Use the BACKSPACE or DEL key, or the Delete command, when
+ you want to delete text from the current Notepad document
+ but you have text on the Clipboard that you want to keep.
+
+ To delete one character at a time:
+
+    Press BACKSPACE to delete the character to the left of
+    the insertion point.
+         Or  
+    Press DEL to delete the character to the right of the
+    insertion point.
+
+ 
+ To delete more than one character
+
+ 1.  Select the text you want to delete.
+ 2.  Press BACKSPACE or DEL.
+         Or 
+     Choose Delete from the Edit menu.
+     To place the text onto the Clipboard, choose Cut from
+     the Edit menu.
+
+.TOPIC:
+Finding Text
+ 
+ You can start a search for specific text at any point in a
+ Notepad document.
+
+ To find specific characters or words:
+
+ 1.  Move the insertion point to where you want the search
+     to begin.
+ 2.  From the Search menu, choose Find.
+ 3.  Type the characters or words you want to find.
+ 4.  Choose the Find Next button.
+ 5.  To find the next occurrence of the text, choose
+     Find Next from the Search menu or press F3.
+
+ See: Search Menu Commands
+
+.TOPIC:
+Formatting Text
+
+ To format text, do the following.
+
+ To do this
+ =================================
+ End a line           Press ENTER.
+ Indent a line        Press TAB.
+ Insert a tab         Press TAB.
+ Insert a blank line  Move the insertion point to the
+                      beginning or end of a line, and
+                      then press ENTER.
+
+.TOPIC:
+File Menu Commands
+
+ New
+ ---
+ Opens a new document.
+ When you choose New, you can save changes to the document
+ you have been working on.
+
+ Open
+ ----
+ Opens a text file.
+ When you choose Open, you can save changes to the document
+ you have been working on.  The file can be an SDI Notepad
+ file or any file saved as text-only from another application.
+ SDI Notepad cannot open a file larger than 32K.
+
+ Save
+ ----
+ Saves changes to the document you have been working on.
+ When you choose Save, the document remains open so you
+ can continue working on it.
+
+ Save As
+ -------
+ Saves a new or existing document.  You can name a new
+ document or save an existing document under a new name.
+ The original document remains unchanged.  When you choose
+ Save As, the document remains open so you can continue
+ working on it.
+
+ Print
+ -----
+ Prints the document.
+
+ Exit
+ ----
+ Closes the document you have been working on and quits
+ SDI Notepad.  You can save the file before quitting.
+
+.TOPIC:
+Edit Menu Commands
+
+ Cut
+ ---
+ Deletes text from a document and places it onto the
+ Clipboard, replacing the previous Clipboard contents.
+
+ Copy
+ ----
+ Copies text from a document onto the Clipboard,
+ leaving the original intact and replacing the previous
+ Clipboard contents.
+ 
+ Paste
+ -----
+ Pastes a copy of the Clipboard contents at the insertion
+ point or replaces selected text in a document.
+
+ Delete
+ ------
+ Deletes selected text from a document, but does not place
+ the text onto the Clipboard.  Use Delete when you want to
+ delete text from the current Notepad document but you have
+ text on the Clipboard that you want to keep.
+
+ See: Deleting Text   Finding Text   Formatting Text
+
+ Select All
+ ----------
+ Selects all the text in a document at once.
+ You can copy the selected text onto the Clipboard, delete
+ it, or perform other editing actions.
+
+ Time/Date
+ ---------
+ Adds the current time and date to a document.
+
+ See: Adding the Time and Date to Documents
+
+ Word Wrap
+ ---------
+ Wraps text in a document.
+
+.TOPIC:
+Search Menu Commands
+
+ Find
+ ----
+ Searches forward from the insertion point for characters
+ or words in a document.
+
+ Find Next
+ ---------
+ Repeats the last search without opening the Find dialog box.
+
+ See: Finding Text
+
+.TOPIC:
+Using Help
+
+ Selecting a Help link
+ ---------------------
+ With a mouse - click on phrases outlined by two triangles.
+ 
+ With the keyboard - Press TAB or Shift-TAB to select a link.
+    Press ENTER to jump to that topic.
+
+ 
+ Scrolling the Help window
+ -------------------------
+ With a mouse - click on the horizontal or vertical scroll bars.
+
+ With the keyboard - press the cursor navigation keys.
+
+ 
+ Closing the Help window
+ -----------------------
+ With a mouse - double click on the window's control box.
+ 
+ With the keyboard - press Ctrl-F4.
+
+ 
+ Command Buttons
+ ---------------
+ Use a mouse to click a button or press the letter mentioned
+ below.
+
+ Contents - displays a table of contents for the application's
+   Help.  Press C to select Contents.
+
+ Search -  opens a dialog box that lists all available Help
+   topics.  Select a topic from the list box and press ENTER.
+   Press S to select Search.
+
+ Back - jumps to the last Help topic viewed.
+   Press B to select Back.
+
+ History - lists the last 20 Help topics viewed.  Jump to any
+   of these topics by selecting from the list box and pressing
+   ENTER.
+   Press T to select History.
+
+ Copy - Copies the contents of the current Help topic into
+   an edit area.  Select the text you want copied to the
+   Clipboard and choose Copy.  Choosing Copy without selecting
+   any text in the edit area copies the entire Help topic to
+   the Clipboard.
+   Press P to select Copy.
+

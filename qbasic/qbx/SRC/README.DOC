@@ -1,0 +1,939 @@
+				README.DOC File
+
+     Release Notes for Microsoft (R) BASIC Professional Development System
+
+				 Version 7.10
+
+		  (C) Copyright Microsoft Corporation, 1990
+
+		 Product Serial Number: 00-007-2710-00007050
+
+
+    This document contains release notes for version 7.10 of the Microsoft (R)
+    BASIC Professional Development System for MS-DOS (R) and the Microsoft
+    Operating System/2 (MS(R) OS/2). The information in this document is more
+    up-to-date than that in the manuals.
+
+    This version of BASIC contains the "BASIC Language Reference" and
+    "Programmer's Guide" published with the previous release of the product,
+    version 7.0. The information in those manuals is current with this
+    release except where noted in this document. The "Getting Started" manual
+    explains the features new to version 7.1 in Chapter 1, "New Features."
+
+    Microsoft revises its languages documentation at the time of reprinting,
+    so some of the information in this online file may already be included in
+    your manuals.
+
+    =======================================================================
+    Contents
+    =======================================================================
+
+    Part	Description
+    ----	-----------
+
+    1		Notes and Tips
+
+    2		Notes for "Microsoft BASIC Language Reference"
+
+    3		Notes for "Microsoft BASIC Programmer's Guide"
+
+
+    =======================================================================
+    Part 1: Notes and Tips
+    =======================================================================
+
+    Quick Library Compatibility Between Versions
+    --------------------------------------------
+    Quick libraries created with version 7.1 that use the LBOUND or UBOUND
+    functions or the ERASE statement on a dynamic array whose elements include
+    a record containing a static array will not work with version 7.0 of QBX.
+
+    Compatibility with Novell Netware
+    -----------------------------------
+    If you have a peripheral (such as a mouse) that uses Interrupt Request
+    Level (IRQ) 3, and your system is part of a network using Novell (R) Netware
+    version 2.15 or earlier, your system may hang when you load QBX, PWB, or
+    CodeView. As a temporary solution, set your peripheral to use another
+    interrupt. For more information, contact your Novell Netware dealer.
+
+    PWB State Files / Help Under OS/2
+    ---------------------------------
+    Do not directly edit PWB state files (such as CURRENT.STS). To change editor
+    settings in PWB, choose Editor Settings from the Options menu. For more
+    information, see the section "Customizing the Environment" in Chapter 4 of
+    "Getting Started."
+
+    MSHELP.DLL must be located in the path set by LIBPATH in your CONFIG.SYS
+    file in order to use Help in PWB under OS/2.
+
+    NMK Utility
+    -----------
+    The NMK utility (NMK.COM) should not be used within PWB. To get help on
+    NMK, type QH NMK from the command line.
+
+    ILINK and BIND Utilities
+    ------------------------
+    Documentation for the ILINK and BIND utilities is included online for
+    compatibility with Microsoft C. These utilities are not included with
+    Microsoft BASIC and are not supported by BASIC.
+
+    I/O within LPRINT, PRINT #, PRINT # USING, WRITE, and WRITE USING
+    -----------------------------------------------------------------
+    If you use any of these output statements with an argument that is,
+    itself, an input/output statement, the output will go to the
+    console screen rather than the expected file or device. To avoid this
+    problem, use a variable to get input, and use that variable as the
+    argument to the statement that will perform the output. In the following
+    example output will always go to the screen:
+
+    OPEN "Test1.dat" FOR INPUT AS #1
+    OPEN "Test2.dat" FOR OUTPUT as #2
+    PRINT #2, INPUT$(10, #1)
+
+    The following rewritten example will send output to the proper place:
+
+    OPEN "Test1.dat" FOR INPUT AS #1
+    OPEN "Test2.dat" FOR OUTPUT AS #1
+    TEXT$ = INPUT$(10, #1)
+    PRINT #2, TEXT$
+
+    Output is also sent to the screen if you use an argument that is a
+    user-defined function that also performs input/output. You must not
+    use user-defined functions that perform I/O as arguments to any of the
+    preceding output statements.
+
+    Debugging Custom Run-Time Modules with CodeView
+    ------------------------------------------------
+    You can debug custom run-time modules with CodeView only in protected mode
+    (CVP.EXE). To do this you must prepare the run-time module as follows:
+
+    1. Compile the source files using the CodeView options (/Zi or /Zd).
+
+    2. Set the LINK environment variable to include the /CO (CodeView) option.
+
+    3. Run the BUILDRTM utility to create the custom run-time module.
+
+    After you run BUILDRTM, you should set the LINK environment variable back to
+    its original setting.
+
+    References to Version Numbers in Filenames
+    ------------------------------------------
+    The references to the filenames for the BASIC run-time libraries and run-
+    time modules in the "BASIC Language Reference" and "Programmer's Guide"
+    include the 7.0 version number, e.g. BRT70ENR.LIB. Change these to include
+    the 7.1 version number, e.g. BRT71ENR.LIB.
+
+
+    =======================================================================
+    Part 2: Notes for "Microsoft BASIC Language Reference"
+    =======================================================================
+
+    Page	Section\Note
+    ----	------------
+
+    31-32	CALL (BASIC Procedures)
+		-----------------------
+		In version 7.1, BASIC supports the use of the BYVAL keyword
+		in CALL, DECLARE, SUB, and FUNCTION statements for BASIC
+		procedures. You can use BYVAL to pass parameters by value
+		rather than by reference (the default). It is no longer
+		necessary to enclose parameters in parentheses to emulate
+		passing by value. For more information and an example of using
+		BYVAL in BASIC procedures, see the online Help for the DECLARE
+		statement (BASIC procedures). For specifics on using BYVAL with
+		CALL, see the online Help for the CALL statement (BASIC
+		procedures).
+
+		Change the explanation of the example to state that the SUB
+		procedure prints a message on the 24th line of the display.
+
+     37 	CHAIN
+		-----
+		Under DOS 2.1, CHAIN will not work unless filespec$ provides a
+		path. Also under DOS 2.1, if the run-time module is in the
+		root directory, the root directory must be listed in the PATH
+		environment variable.
+
+     40 	CHDIR
+		-----
+		Refer to the online Help for CHDIR for a more appropriate
+		example of CHDIR and MKDIR usage.
+
+     61 	COMMAND$
+		--------
+		The fifth line from the top of the page is missing a pair of
+		parentheses. The line should read:
+
+		SUB Comline (NumArgs, Args$(), MaxArgs) STATIC
+
+     68 	CONST
+		-----
+		You cannot use ASCII 01 and 02 in string constants if you are
+		going to compile to an executable program. The compiler
+		(BC.EXE) uses ASCII 1 and 2 internally to represent
+		End-of-Statement and End-of-Line, respectively. You can,
+		however, still use 1 and 2 within the QBX environment.
+
+     84 	DATA
+		----
+		You cannot use ASCII 01 and 02 in data strings if
+		you are going to compile to an executable program.
+		See the preceding note for CONST.
+
+     88 	DECLARE (BASIC Procedures)
+		--------------------------
+		In version 7.1, BASIC supports the use of the BYVAL keyword
+		in CALL, DECLARE, SUB, and FUNCTION statements for BASIC
+		procedures. See the online Help for this statement for more
+		information.
+
+     93 	DECLARE (Non-BASIC Procedures)
+		------------------------------
+		Reword the paragraph following the note to read:
+
+		Be careful when using the SEG keyword or when passing parameters
+		by near reference (no keyword), because BASIC may move variables
+		in memory before the called routine begins execution. Anything
+		in a CALL statement's argument list that causes memory movement
+		may create problems. You can safely pass variables using SEG or
+		near reference if the CALL statement's argument list contains
+		only simple variables or arithmetic expressions. SEG cannot be
+		used to pass arrays.
+
+    116 	END
+		---
+		Syntax 2, END [n%], accepts a range of integers from -32,768
+		through 32,767, inclusive.
+
+     144	FUNCTION
+		--------
+		In version 7.1, BASIC supports the use of the BYVAL keyword
+		in CALL, DECLARE, SUB, and FUNCTION statements for BASIC
+		procedures. See the entry for page 31 for more information.
+
+     147	GET (File I/O)
+		--------------
+		The argument for record number should be "recordnumber&" since
+		it accepts a long-integer value.
+
+    151 	GET (Graphics)
+		--------------
+		Screen modes 3 and 4 should be added to the table at the top of
+		the page. Both modes use one bit per pixel per plane and have
+		one plane.
+
+    177 	KEY (Assignment)
+		----------------
+		The KEY n%, stringexpression$ syntax can also be used to
+		create user-defined keys. Refer to the information on page 180
+		for specific details on how this is accomplished.
+
+		The description for the KEY ON statement in the table in the
+		middle of the page should mention that only the first five
+		characters of the soft-key string value are displayed for
+		function key F10.
+
+    180 	KEY (Event Trapping)
+		--------------------
+		The correct value for the Ctrl+Alt key combination is &H0C
+		(12 decimal) for non-extended keyboards and &H8C for extended
+		keyboards.
+
+    181 	Keyboard Scan Codes
+		-------------------
+		Add the following to the Keyboard Scan Code chart:
+
+		Key	Code
+		---	----
+		F11	 133
+		F12	 134
+
+    200 	LOCK...UNLOCK
+		-------------
+		The paragraph after the warning incorrectly states that BASIC
+		may generate the error "Bad record number" if you attempt to
+		access a file that is locked. BASIC will generate only the
+		"Permission denied" error message in this case.
+
+    238-239	OPEN COM
+		--------
+		Under OS/2, specifying DS0 to ignore the state of the Data Set
+		Ready (DSR) line does not work properly. In this case, you
+		will have to either not ignore the DSR line or you will have
+		to jumper the DSR line to an active high-signal line. Refer to
+		serial port information that specifically pertains to your
+		hardware, and perform any modifications at your own risk.
+
+		The range for the parity argument should include the value PE.
+		Setting parity to PE enables parity error checking.
+
+    261 	PLAY (Music)
+		------------
+		The remarks should note that the PLAY statement generates an
+		"Illegal Function Call" error if you attempt to use the
+		enharmonic notes C-, B+, E+ or F-.
+
+    275 	PRINT USING
+		-----------
+		The syntax for the PRINT USING statement should be as follows:
+
+		PRINT USING formatstring$; expressionlist [;]
+
+		The PRINT USING statement does not use print zones. You cannot
+		replace the optional semicolon with a comma.
+
+
+    280 	PUT Statement (File I/O)
+		------------------------
+		The argument for record number should be "recordnumber&" since
+		it accepts a long-integer value.
+
+		The introduction to the example near the bottom of the page
+		incorrectly states that "the following two statements write
+		15 bytes to file number 1:" The example actually writes 17
+		bytes to file number 1, since the first two bytes store
+		the length of the string in BASIC.
+
+    333 	SETMEM Function
+		---------------
+		The example shows using the C malloc() and free() functions to
+		allocate and free memory. These will take the allocated memory
+		away from the BASIC program until the program terminates. To be
+		able to reallocate memory using SETMEM after a C procedure, you
+		must use halloc() and hfree().
+
+		The corrected C code for the SETMEM example is as follows:
+
+		void far cfunc(bytes)
+		int bytes;
+		{
+			char *halloc();
+			char *workspace;
+
+			/* Allocate working memory using amount BASIC freed. */
+			workspace=halloc((unsigned) bytes, 1);
+
+			/* Working space would be used here. */
+
+			/* Free memory before returning to BASIC */
+			hfree(workspace);
+		}
+
+    345 	SOUND
+		-----
+		The duration argument accepts any positive single-precision,
+		floating-point value between 0 and 65,535, inclusive.
+
+    368-375	StringAddress, StringAssign, StringLength, and StringRelease
+		------------------------------------------------------------
+		Sample MASM code for these entries includes lines like
+		the following:
+
+		extrn StringAddress: proc far
+		call StringAddress
+
+		In all cases, only "far" should appear after the colon
+		in the extrn directive. In addition, all extrn
+		directives should appear outside of any .code or .data
+		segment directives. For example, the extrn directives
+		in the sample code on page 369 should appear as
+		follows:
+
+		.model	medium, basic	; Use same model as BASIC.
+
+		; Define external (BASIC library) procedures.
+		extrn	StringAddress: far
+		extrn	StringLength: far
+
+		.code
+
+		; Define procedure with one-word argument.
+		...
+
+    376 	SUB
+		---
+		In version 7.1, BASIC supports the use of the BYVAL keyword
+		in CALL, DECLARE, SUB, and FUNCTION statements for BASIC
+		procedures. See the online Help for this statement for more
+		information.
+
+    409 	WIDTH
+		-----
+		The Remarks state that the WIDTH #filenumber% form of the
+		statement may be used with a file. This form of	the statement
+		may only be used with a device opened as a file with the OPEN
+		statement.
+
+    425 	DATESERIAL
+		----------
+		Change the paragraph that begins "For each of the three
+		arguments..." to read as follows:
+
+		When converting specific dates, the ranges shown above for each
+		of the arguments should be used. However, when using expressions
+		to calculate date serial numbers for relative dates (e.g., a
+		week from 10 Dec 89) each of the three arguments can be any
+		valid integer as long as the resulting date serial number
+		is between -53,688 and 65,380, inclusive. Date serial
+		numbers outside this range generate the error message "Illegal
+		function call."
+
+    506 	Matrix Math Toolbox
+		-------------------
+		The first sentence of the Remarks for the MatSEqn FUNCTION
+		should read:
+
+		The MatSEQNtype% procedure solves a system of linear equations
+		contained in a one-dimensional vector and in a square matrix;...
+
+		The sentence beginning "The second matrix,..." should read:
+
+		The second matrix is used to enter the vector constants for
+		that system of simultaneous equations.
+
+    518 	Fonts Toolbox
+		-------------
+		Change the first sentence in the second paragraph to read as
+		follows:
+
+		Nine font files are supplied:  Courier fonts in COURA.FON,
+		COURB.FON, and COURE.FON, Helv fonts in HELVA.FON,
+		HELVB.FON, and HELVE.FON, and Tms Rmn fonts in TMSRA.FON,
+		TMSRB.FON and TMSRE.FON.
+
+    523 	Fonts Toolbox
+		-------------
+		Add the following documentation for the GTextWindow before
+		existing documentation for GetTotalFonts:
+
+		GTextWindow SUB
+
+		Action	    Retains the logical coordinates of window
+			    boundaries. (See note below.)
+
+		Syntax	    GTextWindow (x1, y1, x2, y2, Scrn%)
+
+		Remarks     The GTextWindow procedure uses the following
+			    arguments:
+
+			    Argument	    Description
+			    --------	    -----------
+
+			       x1	    Integer containing the minimum
+					    X value  (logical coordinate).
+
+			       y1	    Integer containing the minimum
+					    Y value.
+
+			       x2	    Integer containing the maximum
+					    X value.
+
+			       y2	    Integer containing the maximum
+					    Y value.
+
+			      Scrn%	    Integer containing either cTRUE
+					    (used with WINDOW SCREEN statement
+					    to show window Y values increase
+					    top to bottom) or cFALSE (used
+					    with WINDOW statement to show
+					    window Y values increase bottom to
+					    top )
+
+			    This procedure should be called after defining
+			    VIEW and WINDOW and prior to calling OutGText.
+
+			    To clear the current window, call this routine
+			    with X1=X2 or Y1=Y2.
+
+			    Note: The first call to OutGtext will work without
+			    calling GTextWindow, however all subsequent calls
+			    treat the coordinates as pixel coordinates of the
+			    window; therefore, to retain the logical
+			    coordinates call GTextWindow prior to calling
+			    OutGText.
+
+		See Also    See OutGText statement for more information.
+
+    524 	Fonts Toolbox
+		-------------
+		Change the last line of the LoadFont% FUNCTION section to read:
+
+		l% = LoadFont%("n1/n3/n6")
+
+    549 	User Interface Toolbox
+		----------------------
+
+		Change "CommandKeySet" in the paragraph following the table to
+		"ShortCutKeySet."
+
+    550 	User Interface Toolbox
+		----------------------
+		Add the following line after the COMMON SHARED statement for
+		GloStorage:
+
+		COMMON SHARED /uitools/GloWindowStack() AS INTEGER
+
+    586 	User Interface Toolbox
+		----------------------
+		The AttrBox SUB is incorrectly identified as being a procedure
+		in GENERAL.BAS. Actually, AttrBox is found in UIASM.OBJ.
+
+    601 	Keyboard Scan Codes and ASCII Character Codes
+		---------------------------------------------
+
+		Add the following to the table on page 601:
+
+		   |	   |		|  ASCII or  |	ASCII or  |  ASCII or
+		   |  Scan |  ASCII or	|  Extended  |	Extended  |  Extended
+		Key|  Code |  Extended	|  with SHIFT|	with CTRL |  with ALT
+		---|-------|------------|------------|------------|------------
+		   |Dec|Hex|Dec|Hex|Char|Dec|Hex|Char|Dec|Hex|Char|Dec|Hex|Char
+		---|---|---|---|---|----|---|---|----|---|---|----|---|---|----
+		F11|133| 85|133| 85| NUL|135| 87| NUL|137| 89| NUL|139| 8B| NUL
+		F12|134| 86|134| 86| NUL|136| 88| NUL|138| 8A| NUL|140| 8C| NUL
+		---------------------------------------------------------------
+
+    606 	BASIC Reserved Words
+		--------------------
+		Add PRESERVE to the list of BASIC reserved words.
+
+    608-610	BASIC Compiler (BC)
+		-------------------
+		In version 7.1, the following options were added for the BASIC
+		Compiler:
+
+		/? or /Help	Displays compiler syntax and options.
+
+		/FBr[filename]	Generates a file containing restricted program
+				symbol information for use with the Programmer's
+				WorkBench Source Browser. This information file
+				has the name specified by the filename argument.
+				If no name is specified, it has the same name as
+				the source file with an .SBR filename extension.
+				The file contains information about the
+				definitions and references to all global
+				symbols.
+
+		/FBx[filename]	Generates a file containing extended program
+				symbol information for use with the Programmer's
+				WorkBench Source Browser. This information file
+				has the name specified by the filename argument.
+				If no name is specified, it has the same name as
+				the source file with an .SBR filename extension.
+				The file contains information about the
+				definitions and references to all global and
+				local symbols.
+
+		The information for the /Z option applies to PWB, as well as to
+		the M editor.
+
+    611 	BUILDRTM Utility
+		----------------
+		The run-time argument to BUILDRTM should not include a path or
+		a file extension.
+
+    620 	NMAKE
+		-----
+		Change the description for the macrodefinitions argument to
+		the following:
+
+		An optional field that lists macro definitions for NMAKE to
+		use. Macros can also be specified in the makefile. See the
+		"Macro Definitions" section for details.
+
+    631 	Table 4.1 Run-Time Error Codes
+		------------------------------
+		Add run-time error 89, "Insufficient ISAM buffers," to
+		the table.
+
+    639 	Database needs repair
+		---------------------
+		Change REPAIR.EXE to ISAMRPR.EXE.
+
+    653 	Illegal Function Call
+		---------------------
+		This error may also occur if an error is trapped and corrected
+		by the user between BEGINTRANS and COMMITTRANS statements. For
+		example:
+
+		ON ERROR GOTO TRAP
+		OPEN "A:\FOO.MDB" FOR ISAM ...
+		BEGINTRANS
+		...
+		  COMMITTRANS
+		  PRINT "The TRANSACTION was SUCCESSFULLY committed"
+		  ...
+		END
+		TRAP:
+		IF ERL = 10 and ERR = 71 THEN
+		  INPUT "Hit any key after the DRIVE door is CLOSED...";a$
+		  RESUME
+		END IF
+
+		This example may cause an "Illegal function call" error on the
+		COMMITTRANS statement if the transaction is interrupted by a
+		"Disk not ready" error.
+
+    656 	Run-Time Error Message - Insufficient ISAM buffers
+		--------------------------------------------------
+		There are not enough buffers to handle ISAM file processing.
+		See the section "Estimating Minimum ISAM Buffer Values" in
+		Chapter 10 of the "Programmer's Guide" for more information.
+
+		ERR code: 89
+
+    665 	Run-Time Error Message - Overflow
+		----------------------------------
+		In the first list item, change "40 indices" to "28 indexes."
+		Remove the sentence that begins, "If there are 32 open
+		tables..." This limitation is not correct and does not cause an
+		Overflow error. See "Using Multiple Files: 'Relational'
+		Databases" in Chapter 10 of the "Programmer's Guide" for
+		information on open table limitations.
+
+    684 	Link error L1083 - Cannot open run file
+		---------------------------------------
+		This error can also be caused by a read-only .EXE file of the
+		same name as specified for the run file. Link will not be able
+		to overwrite the read-only file.
+
+    690 	Link error L2044 - Symbol multiply defined
+		------------------------------------------
+		This error may also appear in PWB when doing mixed-language
+		programming with C. The error results from the C start-up
+		code being linked in twice. To avoid the error, enter the
+		appropriate BASIC library (for example, BRT71ENR.LIB
+		for a program using the BASIC run-time, emulator math,
+		near strings, and running in real mode) in the Additional
+		libraries field of the Link Options dialog.
+
+
+    =======================================================================
+    Part 3: Notes for "Microsoft BASIC Programmer's Guide"
+    =======================================================================
+
+    Page	Section/Note
+    ----	------------
+
+     41 	Defining Procedures
+		-------------------
+		The DATA statement should be added to the list of statements
+		and expressions not allowed within a procedure.
+
+     56 	Passing Arguments by Value
+		--------------------------
+		This section describes how to emulate passing parameters
+		by value in BASIC procedures by enclosing the parameter in
+		parentheses. With version 7.1 you can define parameters
+		to pass by value using the BYVAL keyword in the DECLARE
+		statement for the procedure. For information on using BYVAL in
+		BASIC procedures, see the online Help for the DECLARE statement
+		(BASIC procedures).
+
+     66 	Preserving Values of Local Variables with STATIC
+		------------------------------------------------
+		In the first example, a "Duplicate Definition" error will occur
+		if the procedure SubProg2 is called more than once. To avoid
+		this, rewrite the example as follows:
+
+		SUB SubProg2
+		    STATIC Array() AS INTEGER, FirstPassFlag%
+		    IF FirstPassFlag% = 0 THEN
+			DIM Array(-5 TO 5, 1 TO 25) AS INTEGER
+			FirstPassFlag% = 1
+		    END IF
+		    ...
+		END SUB
+
+     68 	The Factorial Function
+		----------------------
+		In the example declaration of the Factorial# procedure, delete
+		the STATIC keyword so the line appears as follows:
+
+		FUNCTION Factorial# (N%)
+
+    224 	Presentation Graphics
+		---------------------
+		Table 6.1 should indicate that the Presentation Graphics toolbox
+		can only be used in real mode.
+
+    250-251	AxisType
+		--------
+		The table listing the elements of the AxisType structure
+		incorrectly lists the "Labelled" element. That element should
+		be referred to as "Labeled."
+
+		The description for the TicFormat element should state that you
+		should set TicFormat to cNormFormat to display tick mark labels
+		in decimal format.
+
+    319 	ISAM Support
+		------------
+		The Note on this page indicates that ISAM is not supported
+		under OS/2. With version 7.1 this restriction has been
+		removed.
+
+    341 	Restrictions on Indexing
+		------------------------
+		Add the following to the end of the first paragraph:
+
+		The maximum number of indexes per table is 28.
+
+    344 	Setting the Current Record by Position
+		--------------------------------------
+		Add the following just after the paragraph that begins,
+		"The effect of any of the MOVEdest statements...":
+
+		If you trap errors while using either a MOVENEXT or
+		MOVEPREVIOUS ISAM statement, and an I/O error occurs (either
+		57 or 71) on an index that is not the NULL index, you must
+		resynchronize ISAM internal pointers before using another
+		MOVENEXT or MOVEPREVIOUS statement. Synchronization can be
+		done using any valid SETINDEX statement, either a MOVEFIRST or
+		MOVELAST statement, or any of the SEEKxx (SEEKEQ, SEEKGE,
+		SEEKGT) statements.
+
+    345 	A Typical ISAM Program
+		----------------------
+		The command line used for invoking PROISAM for use with the
+		BOOKLOOK program (shown halfway down the page) is stated as
+		PROISAM /Ib:24. The efficiency of the ISAM has improved and
+		the program can now be run in 640K conventional memory, with
+		no expanded memory, with only 9 buffers: PROISAM /Ib:9. If you
+		have EMS available, you need not specify the /Ib option.
+
+    376 	Starting ISAM for Use in QBX - /Ie argument
+		-------------------------------------------
+		The explanation for the /Ie: option for the ISAM TSR states
+		that "...In practice, you only need to specify /Ie if your
+		program code (or a loaded Quick library) actually manages EMS
+		memory." Although this is true, there may be other times when
+		you want to reserve EMS for other uses. Having many ISAM
+		buffers improves the performance of ISAM, but during program
+		development ISAM performance may be less important than the
+		size of your program's source code. For example, your program
+		may only need 10-12 ISAM buffers to prevent an "Insufficient
+		ISAM buffers" error at run time. If you have 1.2 megabytes of
+		EMS available, you can use the /Ie: option to minimize the EMS
+		used by ISAM buffers, reserving the rest for program source
+		code. For example, if your program needs about 10 buffers, you
+		can invoke the ISAM TSR with /Ie:900. This will provide several
+		hundred K of EMS to be used for ISAM buffers. The rest will be
+		reserved for QBX (and your program source code). Note that
+		only program parts whose size is between 512 bytes and 16K are
+		placed in EMS by QBX. You can check the sizes of your
+		procedures and module-level code blocks by pressing F2 to see
+		the View menu's SUBs dialog box.
+
+    380 	Using ISAM with Compiled Programs
+		---------------------------------
+		The note labeled Important at the bottom of the page no longer
+		applies in version 7.1 since you can specify additional options
+		from the Make EXE dialog box when compiling within QBX.
+
+    393 	The ISAMCVT Utility
+		-------------------
+		Add the following sentence just before the section entitled
+		"The Repair Utility":
+
+		No EMS driver can be loaded when running ISAMCVT.
+
+    394 	Repair Utility
+		--------------
+		Replace the paragraph that begins, "When you use the ISAMREPR
+		utility..." with the following:
+
+		The ISAMREPR utility requires an additional 32K within your
+		database to re-create the system indexes.  This adds a least
+		32K to the size of the database. Do not run the utility if
+		your disk does not have this amount of space available in the
+		current working directory. Also note that the maximum size of
+		a database is 128 megabytes. When you run the ISAMREPR
+		utility, adding 32K to the size of an extremely large database
+		may cause it to exceed the maximum allowed. ISAMREPR deletes
+		inconsistent records in tables, but does not compact after
+		doing so. Compacting a database is described in the next
+		section.
+
+    490-497	String-Processing Routines
+		--------------------------
+		Sample MASM code in this section includes lines like
+		the following:
+
+		extrn stringassign: proc far
+		call stringassign
+
+		In all cases, only "far" should appear after the colon in the
+		extrn directive. In addition, all extrn directives should appear
+		outside of any .CODE or .DATA segment directives. For an
+		example, see the entry for pages 368-375 of the "BASIC Language
+		Reference."
+
+    494		BASIC Calling MASM
+		------------------
+		Change the first sentence in the paragraph following the
+		"Important" note to read as follows:
+
+		This MASM code uses the .MODEL directive which establishes
+		compatible naming and calling conventions for BASIC, and
+		it also uses simplified segment directives.
+
+		Change the third-from-last line of the example to read as
+		follows:
+
+		C$ = AddString$(A$, LEN(A$), B$, LEN(B$))
+
+    520 	Language Changes for Protected Mode
+		-----------------------------------
+		Table 14.1 indicates that all of the ISAM statements and
+		functions are not supported in protected mode. With version
+		7.1 that restriction has been removed.
+
+    539 	Using Stub Files
+		----------------
+		The third paragraph on this page states that stub files can be
+		used to create run-time modules. This is true for all stub files
+		except OVLDOS21.OBJ and NOEMS.OBJ, which cannot be built into
+		run-time modules. These stub files can be linked with programs
+		using run-time modules, however.
+
+    558-560	Using BC Command Options
+		------------------------
+		The first paragraph in this sections states that the slash (/)
+		and the dash (-) can be used interchangeably to specify BC
+		command-line options. This is true, but they cannot be
+		intermixed. You must use either all slashes or all dashes
+		in your command line.
+
+		Add the following command options to the table: /?, /Help, /FBr,
+		 /FBx. See the entry in this document for pages 608-610 of the
+		"BASIC Language Reference" for descriptions of these options.
+		The description of the /Z option applies to PWB, as well as to
+		the M editor.
+
+		When using the /D option with dynamic arrays, it is possible
+		to produce incorrect results if you pass an array element to a
+		procedure that changes the value of the element index. For
+		example, the following works properly when compiled with all
+		options except /D:
+
+		CALL SubProc(a(i),i)
+		PRINT a(i), i
+
+		The following performs the same operations and works properly
+		with all compile options including /D.
+
+		j=i
+		CALL SubProc(a(i),j)
+		PRINT a(i), j
+
+    561 	Using Floating-Point Options (/FPa and /FPi)
+		--------------------------------------------
+		The new CURRENCY data type is not currently supported in the
+		alternate math library.
+
+    576 	Options
+		-------
+		Replace /NOD with /NOE in the table at the top of the page.
+
+    589 	Valid LINK Options
+		------------------
+		The /PACKCODE option can be abbreviated to /PACKC, not /PAC as
+		shown in the table.
+
+    595 	Ignoring Default Libraries (/NOD:filename)
+		------------------------------------------
+		Add the following to the paragraph that begins, "In general,
+		higher-level languages..."
+
+		For example, if you specify the /NOD option when linking a
+		protect-mode BASIC program, you must explicitly specify the
+		run-time library (BRT71xxP.LIB) and OS2.LIB in the libraries
+		field of the LINK command line.
+
+    599 	Specifying OS/2 Window Type
+		---------------------------
+		You cannot use the /D compiler option together with /PM:VIO.
+
+    611 	Linking Stub Files
+		------------------
+		The first paragraph on this page states that you can link stub
+		files with custom run-time modules. This is true for all stub
+		files except OVLDOS21.OBJ and NOEMS.OBJ. These stub files can be
+		linked with programs using run-time modules, however.
+
+    624 	Mouse, Menu, and Window Libraries
+		--------------------------------
+		If you rebuild toolbox Quick libraries, files should be
+		compiled with the /Ah option (allow dynamic arrays to be
+		greater than 64K) if you intend to use QBX with the /Ea option
+		(Put arrays into expanded memory).
+
+		Also note that Table 19.1 applies to all toolbox files, not
+		just MOUSE.BAS, MENU.BAS, and WINDOW.BAS.
+
+    625 	Loading and Viewing Quick Libraries
+		-----------------------------------
+		QBX now requires that the BASIC source for any Quick library
+		be compiled using the /Fs (far string) compiler option.
+		Consequently, QBX will not permit you to load a Quick library
+		file that has the near string features of earlier versions of
+		QuickBASIC. If you encounter an "Invalid Format" error when
+		attempting to load an older Quick library file, you should
+		recompile the files using BC with the /Fs option.
+
+		You may also encounter the "Invalid Format" error if you
+		invoke QBX with a /Ea option (put arrays into expanded memory)
+		and have not compiled the Quick library with /D (generate
+		debugging code) or /Ah (allow dynamic arrays of records,
+		fixed-length strings, and numeric data to be larger than 64K).
+
+    636 	Description Blocks
+		------------------
+		The following information applies to the command component
+		of description blocks:
+
+		The first character after a dependency line in a description
+		block must be a whitespace character, i.e., either a space or
+		a tab. An error occurs if only a carriage return is used on a
+		blank line.
+
+    663 	OBJECTS Directive
+		-----------------
+
+		This section should note that you should not include the
+		OVLDOS21.OBJ or NOEMS.OBJ stub files in the list of filenames
+		after the OBJECTS directive.
+
+    701 	Elementary Data Types - String
+		------------------------------
+		You cannot use ASCII 01 and 02 in strings constants if you
+		are going to compile to an executable program. The compiler
+		(BC.EXE) uses ASCII 1 and 2 internally to represent
+		End-of-Statement and End-of-Line, respectively. You can,
+		however, still use 1 and 2 within the QBX environment.
+
+    702 	Elementary Data Types - Numeric
+		-------------------------------
+		A math coprocessor (80x87) handles rounding of extremely small
+		numbers differently from the way numbers are rounded by the
+		BASIC emulator math package. Because of this difference, some
+		numbers that are properly displayed using a coprocessor are
+		rounded and displayed as zero when using emulator math. The
+		range of single-precision floating-point numbers that are
+		properly displayed as input, using the emulator math package,
+		is +/- 2.802597E-45. For double-precision floating-point
+		numbers, the range is +/- 4.94065645841247D-324.
+
+		In Table B.1, the description for double-precision floating
+		point numbers should say that they are accurate to 15
+		digits. Also, the upper and lower ranges with or without
+		the alternate math library should be +/-1.79769313486231D308
+		rather than +/-1.797693134862315D308 for regular math and
+		+/-1.79769313486232D308 for alternate math.
+
+    707 	Data Types in ISAM Files
+		------------------------
+		In Table B.2, the description for the DOUBLE data type
+		should list the upper and lower ranges as
+		+/-1.79769313486231D308 rather than +/-1.797693134862315D308.
