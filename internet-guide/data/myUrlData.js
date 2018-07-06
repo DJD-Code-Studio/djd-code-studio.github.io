@@ -2,87 +2,373 @@
 // for the function myUrlData to be called from the main page
 // myUrlData([{.....}, {.....}, {.....}, {.....}]);
 // //
-
 //   {
 //     "id": "some alphanumeric string",
 //     "url": "the actual url will go here",
 //     "title": "RedHat Corporate Account",
 //     "topic": "tbd",
-//     "tagGroup1": "P PYTHON", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
-//     "tagGroup2": "OFFICE LEARNING CODING", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
-//     "favorites": "see GUIDE below",
-//     "usage": "see GUIDE below",
-//     "pagerank": "see GUIDE below",
-//     "siterank": "see GUIDE below",
-//     "label": "any descriptive text will go here (optional)",
-//     "imgLocation": "./snapshots/",
-//     "imgAlt": "alternate text if image cannot be loaded",
-//     "domaiName": "short form of the domain name",
-//     "fqdn": "the correct FQDN of the domain",
-//     "login": "see GUIDE below",
-//   }
-// GUIDE
-//=======
-// favorites
-// This key can have values set to Y or N and will be used to auto-populate pre-built searches.
-// usage
-// This key's values set to daily/weekly/monthly/yearly/occasionally/frequently/never and will be used to auto-populate pre-built searches.
-// pagerank
-// This key can have values set to a numerical value and will be used to sort search results for all types of page searches. For doamins the value will be set to 0.
-// siterank
-// This key can have values set to a numerical value and will be used to sort search results for all types of domain or site searches. For pages the value will be set to 0.
-// login
-// This key lets us know whether the sites needs user credentials to allow entry - it can have 3 values - y, n, opt
-// //
-
-
-myUrlData([
-
-  {
+//     "tagGroup1": "<ALPHABET> < the nearest subject>",
+  //     "tagGroup2": "<other keywords> <other keywords> <other keywords>",
+  //     "favorites": "see GUIDE below",
+  //     "usage": "see GUIDE below",
+  //     "pagerank": "see GUIDE below",
+  //     "siterank": "see GUIDE below",
+  //     "label": "any descriptive text will go here (optional)",
+  //     "imgLocation": "./snapshots/",
+  //     "imgAlt": "alternate text if image cannot be loaded",
+  //     "domaiName": "short form of the domain name",
+  //     "fqdn": "the correct FQDN of the domain",
+  //     "login": "see GUIDE below",
+  //   }
+  // GUIDE
+  //=======
+  // "tagGroup1":
+  // "<ALPHABET> < the nearest subject>", //this is where the main keywords will go - alphabet and subject. ALPHABET should be SINGLELETTER. First letter of subject should be in sync with ALPHABET.
+    // "tagGroup2":
+    // "<other keywords> <other keywords> <other keywords>", //this is where the keywords will go. They will be scanned while searching.
+    //
+    // favorites
+    // This key can have values set to Y or N and will be used to auto-populate pre-built searches.
+    // usage
+    // This key's values set to daily/weekly/monthly/yearly/occasionally/frequently/never and will be used to auto-populate pre-built searches.
+    // pagerank
+    // This key can have values set to a numerical value and will be used to sort search results for all types of page searches. For doamins the value will be set to 0.
+    // siterank
+    // This key can have values set to a numerical value and will be used to sort search results for all types of domain or site searches. For pages the value will be set to 0.
+    // login
+    // This key lets us know whether the sites needs user credentials to allow entry - it can have 3 values - y, n, opt
+    // //
+    myUrlData([
+    {
     "id": "7R4R4F1212hwdhdh",
     "url": "https://access.redhat.com/management/",
     "title": "RedHat Corporate Account",
     "topic": "tbd",
-    "tagGroup1": "D DXC", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
-    "tagGroup2": "OFFICE LEARNING REDHAT", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
+    "tagGroup1": "D DXC",
+    "tagGroup2": "OFFICE LEARNING REDHAT",
     "favorites": "y",
     "usage": "frequently",
-    "pagerank": "1",
-    "siterank": "0",
+    "pageRank": "1",
+    "siteRank": "0",
     "label": "This is the RedHat Account (Corporate))",
     "imgLocation": "./snapshots/",
     "imgAlt": "RedHat Account",
-    "domaiName": "access.redhat.com",
+    "domainName": "redhat.com",
     "fqdn": "access.redhat.com",
     "login": "opt",
-  }
-]);
-
-
-
+    "description": "tbd",
+    },
+    {
+    "id": "7R4R4F1qrqrqhwdhdh",
+    "url": "http://dl3.downloadoo.ir/",
+    "title": "Index of /",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is home page of the site.. there are similar sites",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl3.downloadoo.ir",
+    "fqdn": "dl3.downloadoo.ir",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "38917397F1qrqrqhwdhdh",
+    "url": "http://dl4.downloadoo.ir/",
+    "title": "Index of /",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is home page of the site.. there are similar sites",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl4.downloadoo.ir",
+    "fqdn": "dl4.downloadoo.ir",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "38917616bk397F1qrqrqhwdhdh",
+    "url": "http://dl5.downloadoo.ir/",
+    "title": "Index of /",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is home page of the site.. there are similar sites",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl5.downloadoo.ir",
+    "fqdn": "dl5.downloadoo.ir",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "3891djj4u23o4hwdhdh",
+    "url": "http://dl6.downloadoo.ir/",
+    "title": "Index of /",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "2",
+    "siteRank": "1",
+    "label": "This is home page of the site.. there are similar sites",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl6.downloadoo.ir",
+    "fqdn": "dl6.downloadoo.ir",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "3891823x84284x4m2mhwdhdh",
+    "url": "http://dl3.vaiomusic.org/",
+    "title": "Index of /",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "2",
+    "siteRank": "1",
+    "label": "This is home page of the site.. more pages are there ",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl3.vaiomusic.org",
+    "fqdn": "dl3.vaiomusic.org",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "389113168361397nnwdhdh",
+    "url": "http://dl3.vaiomusic.org/Movie/",
+    "title": "Index of /Movie/",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "2",
+    "siteRank": "1",
+    "label": "This is sub page of the site.. signle page",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl3.vaiomusic.org",
+    "fqdn": "dl3.vaiomusic.org",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "38911qweqqe1397nnwdhdh",
+    "url": "http://dl3.vaiomusic.org/Animation/",
+    "title": "Index of /Animation/",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download animation movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "2",
+    "siteRank": "1",
+    "label": "This is sub page of the site.. signle page",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl3.vaiomusic.org",
+    "fqdn": "dl3.vaiomusic.org",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "38ccc1111e1397nnwdhdh",
+    "url": "http://dl3.vaiomusic.org/Movie1/",
+    "title": "Index of /Movie1/",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "2",
+    "siteRank": "1",
+    "label": "This is sub page of the site.. signle page",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl3.vaiomusic.org",
+    "fqdn": "dl3.vaiomusic.org",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "3000uu8u8u11e1397nnwdhdh",
+    "url": "http://dl3.vaiomusic.org/MovieDL/",
+    "title": "Index of /MovieDL/",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "2",
+    "siteRank": "1",
+    "label": "This is sub page of the site.. signle page",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl3.vaiomusic.org",
+    "fqdn": "dl3.vaiomusic.org",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "121212u8u8u11e1397nnwdhdh",
+    "url": "http://dl3.vaiomusic.org/Movies/",
+    "title": "Index of /Movies/",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "2",
+    "siteRank": "1",
+    "label": "This is sub page of the site.. signle page",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl3.vaiomusic.org",
+    "fqdn": "dl3.vaiomusic.org",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "12171717nccncn47h",
+    "url": "http://dl.sitemovie.ir/",
+    "title": "Index of /",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is home page of the site.. EXPLORE SUB URLS",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "dl.sitemovie.ir",
+    "fqdn": "dl.sitemovie.ir",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "99IJNBD664G2RBB2FN2",
+    "url": "http://www.ai.sri.com/",
+    "title": "Index of /",
+    "topic": "tbd",
+    "tagGroup1": "A artificial intelligence",
+    "tagGroup2": "technology data science artificial intelligence machine learning deep",
+    "favorites": "y",
+    "usage": "occassionally",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is home page of the site.. EXPLORE SUB URLS",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "www.ai.sri.com",
+    "fqdn": "www.ai.sri.com",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "12171717nccncn47h",
+    "url": "http://45.120.114.222/ftp/",
+    "title": "Index of /ftp",
+    "topic": "downloading movies, tv shows, animation movies and music using 'index of' in google search",
+    "tagGroup1": "M movie",
+    "tagGroup2": " free download movies english hindi hollywood bollywood",
+    "favorites": "y",
+    "usage": "frequently",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is home page of the site.. EXPLORE SUB URLS",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "45.120.114.222",
+    "fqdn": "45.120.114.222",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "993942j2n2nnnn11G2RBB2FN2",
+    "url": "http://www.ai.sri.com/movies/",
+    "title": "Index of /movies",
+    "topic": "tbd",
+    "tagGroup1": "A artificial intelligence",
+    "tagGroup2": "technology data science artificial intelligence machine learning deep",
+    "favorites": "y",
+    "usage": "occassionally",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is sub page of the site",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "www.ai.sri.com",
+    "fqdn": "www.ai.sri.com",
+    "login": "n",
+    "description": "tbd",
+    },
+    {
+    "id": "7ujm5th4rf2j2n2nnnn11G2RBB2FN2",
+    "url": "http://www.pbhrfindia.org/contact-us.html",
+    "title": "The Prasanta Banerji Homeopathic Research Foundation - Contact Us",
+    "topic": "tbd",
+    "tagGroup1": "H homeopathy",
+    "tagGroup2": "medical medicine kolkata homeopathy",
+    "favorites": "y",
+    "usage": "occassionally",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is sub page of the site",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "/www.pbhrfindia.org",
+    "fqdn": "/www.pbhrfindia.org",
+    "login": "n",
+    "description": "tbd",
+    },
+    
+    
+    
+    
+    ]);
+    
+    //https://training-lms.redhat.com/lmt/lmtLogin.prEnc?site=rhls
+    // {
+    //   "tagGroup1": "D DXC", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
+    //   "tagGroup2": "OFFICE LEARNING REDHAT", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
+    //   "id": "jefi347R4R4F1212hwdhdh",
+    //   "url": "https://training-lms.redhat.com/lmt/lmtLogin.prEnc?site=rhls",
+    //   "title": "RedHat LMS",
+    //   "classForEachDiv": "ForEachDiv",
+    //   "classTextDiv": "TextDiv",
+    //   "classRankingValues": "1",
+    //   "favorites": "y",
+    //   "usage": "frequently",
+    //   "pagerank": "1",
+    //   "siterank": "0",
+    //   "label": "This is the RedHat Learning Management System",
+    //   "classImageDiv": "ImageDiv",
+    //   "imgLocation": "./snapshots/",
+    //   "imgAlt": "RedHat lMS",
+    //   "abbr": "training-lms.redhat.com",
+    //   "classAbbrDomainname": "redhat.com",
+    //   "abbrTitle": "www.satraining-lms.redhat.com"
+    // "description": "tbd",
   
-
-
-//https://training-lms.redhat.com/lmt/lmtLogin.prEnc?site=rhls
-
-  // {
-  //   "tagGroup1": "D DXC", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
-  //   "tagGroup2": "OFFICE LEARNING REDHAT", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
-  //   "id": "jefi347R4R4F1212hwdhdh",
-  //   "url": "https://training-lms.redhat.com/lmt/lmtLogin.prEnc?site=rhls",
-  //   "title": "RedHat LMS",
-  //   "classForEachDiv": "ForEachDiv",
-  //   "classTextDiv": "TextDiv",
-  //   "classRankingValues": "1",
-  //   "favorites": "y",
-  //   "usage": "frequently",
-  //   "pagerank": "1",
-  //   "siterank": "0",
-  //   "label": "This is the RedHat Learning Management System",
-  //   "classImageDiv": "ImageDiv",
-  //   "imgLocation": "./snapshots/",
-  //   "imgAlt": "RedHat lMS",
-  //   "abbr": "training-lms.redhat.com",
-  //   "classAbbrDomainname": "redhat.com",
-  //   "abbrTitle": "www.satraining-lms.redhat.com"
-  // },

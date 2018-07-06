@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html>
   <style>
-    .pp {
-      color: blue;
-    }
+  .pp {
+  color: blue;
+  }
+  #show {
+  background-color: cyan;
+  }
+  .surprise {
+  color: red;
+  }
+  .display {
+  border: 10px;
+  border-color: black;
+  }
+  .shortpara {
+  background-color: yellow;
+  }
+  @media screen {
+  .optionSelectorDivs {
+  margin: auto;
+  width: 350px;
+  /*height: auto;*/
+  /*border: black solid;*/
+  /*float: right;*/
+  background-color: rgba(200,200,200,1);
+  overflow: hidden;
+  font-size: 1.5em;
 
-    #show {
-      background-color: cyan;
-    }
+  
+  }
+  }
+  @media (max-device-width: 480px) {
+  .optionSelectorDivs {
+    margin: auto;
+  width: 350px;
+  /*float: right;*/
+  background-color: rgba(100,200,200,1);
+  overflow: auto;
+  font-size: 2em;
 
-    .surprise {
-      color: red;
-    }
-
-    .display {
-      border: 10px;
-      border-color: black;
-    }
-
-    .shortpara {
-      background-color: yellow;
-    }
+  
+  }
+  }
   </style>
-
-  <body>
-
+  <body style="background-color: cyan;">
     <div class="pp longpara text"><br>Click the button to change the text of this paragraph.
       <label class="surprise"> this is cool</label>
       <br>
     </div>
-
     <p class="pp shortpara text">This is also a paragraph.</p>
-
     <h5 class="h nopara text">no text</h5>
     <h4>===================</h4>
     <h4>===================</h4>
@@ -42,35 +60,43 @@
     <div id="show" style="display:none;">
       <div id="display"></div>
     </div>
-
     <button onclick="myFunction()">Try it</button>
-
     <script>
-      function myFunction() {
-        var x = document.getElementsByClassName("text");
-        //alert(x.length);
-        document.getElementById("count").innerHTML = x.length;
-        var i = 0;
-        var z = "";
-        var w = "";
-
-        for (i = 0; i < x.length; i++) {
-          var y = x.item(i).innerHTML;
-
-          w = z + y;
-          z = w;
-        }
-
-        document.getElementById("show").style.display = "block";
-        document.getElementById("display").innerHTML = w;
-
-
-
-
-
-      }
+    function myFunction() {
+    var x = document.getElementsByClassName("text");
+    //alert(x.length);
+    document.getElementById("count").innerHTML = x.length;
+    var i = 0;
+    var z = "";
+    var w = "";
+    for (i = 0; i < x.length; i++) {
+    var y = x.item(i).innerHTML;
+    w = z + y;
+    z = w;
+    }
+    document.getElementById("show").style.display = "block";
+    document.getElementById("display").innerHTML = w;
+    }
     </script>
-
-  </body>
-
-</html>
+    <div class="optionSelectorDivs">
+      <div style="margin:1px; width:190px; height:50px; float:left; background-color:rgba(30,100,200,1); ">View Categories</div>
+      <div style="margin:1px; width:100px; height:100px; float:left; background-color:rgba(30,200,100,1); ">Browse All</div>
+      <div style="margin:1px; width:100px; height:150px;  background-color:rgba(200,30,200,1); ">Browse One By One</div>
+      <div style="margin:1px; width:99px; height:100px; background-color:rgba(20,30,200,1); ">Search By Keyword/s</div>
+      <div style="margin:1px; width:150px; height:150px; float:left; background-color:rgba(100,30,200,1); ">Search by Topics</div>
+      <div style="margin:1px; width:200px; height:100px; float:left; background-color:rgba(250,30,200,1); ">Search by Domain Names</div>
+      <div style="margin:1px; width:50px; height:100px; float:left; background-color:rgba(20,30,100,1); ">Search by Parts of The Url</div>
+   <!--    <div style="width:40px; height:40px; float:left; background-color:rgba(100,30,150,1); ">Search by Domain Names</div>
+      <div style="width:40px; height:40px; float:left; background-color:rgba(220,30,10,1); ">Search by Pre-defined Favourites</div>
+      <div style="width:40px; height:40px; float:left; background-color:rgba(190,30,0,1); ">Search by Site Description</div> -->
+ 
+     </div> 
+  </body> 
+</html><!-- 
+float:left; 
+ float:left;
+float:left; 
+ float:left;
+ float:left;
+ float:left;
+float:left;  -->
