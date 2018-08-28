@@ -29,15 +29,21 @@
     //
     // favorites
     // This key can have values set to Y or N and will be used to auto-populate pre-built searches.
+    //
     // usage
     // This key's values set to daily/weekly/monthly/yearly/occasionally/frequently/never and will be used to auto-populate pre-built searches.
+    //
     // pagerank
     // This key can have values set to a numerical value and will be used to sort search results for all types of page searches. For doamins the value will be set to 0.
+    //
     // siterank
     // This key can have values set to a numerical value and will be used to sort search results for all types of domain or site searches. For pages the value will be set to 0.
+    //
     // login
     // This key lets us know whether the sites needs user credentials to allow entry - it can have 3 values - y, n, opt
     // //
+
+    var myUrlData = []
     myUrlData([
     {
     "id": "7R4R4F1212hwdhdh",
@@ -338,17 +344,35 @@
     "label": "This is sub page of the site",
     "imgLocation": "./snapshots/",
     "imgAlt": "tbd",
-    "domainName": "/www.pbhrfindia.org",
-    "fqdn": "/www.pbhrfindia.org",
+    "domainName": "www.pbhrfindia.org",
+    "fqdn": "www.pbhrfindia.org",
     "login": "n",
     "description": "tbd",
     },
-    
-    
-    
-    
+{
+    "id": "7ujm5th47u4ed6yhe7edRBB2FN2",
+    "url": "https://www.bescom.co.in/SCP/Myhome.aspx",
+    "title": "Consumer Portal - BESCOM",
+    "topic": "BESCOM, bill payment",
+    "tagGroup1": "B bescom",
+    "tagGroup2": "bill payment online",
+    "favorites": "y",
+    "usage": "monthly",
+    "pageRank": "1",
+    "siteRank": "1",
+    "label": "This is sub page of the site",
+    "imgLocation": "./snapshots/",
+    "imgAlt": "tbd",
+    "domainName": "www.bescom.co.in",
+    "fqdn": "www.bescom.co.in",
+    "login": "n",
+    "description": "tbd",
+    },
+
+
+
     ]);
-    
+
     //https://training-lms.redhat.com/lmt/lmtLogin.prEnc?site=rhls
     // {
     //   "tagGroup1": "D DXC", //this is where the main keywords will go. ALPHABET should be SINGLELETTER. First letter of SUBJECT should be in sync with ALPHABET.
@@ -371,4 +395,3 @@
     //   "classAbbrDomainname": "redhat.com",
     //   "abbrTitle": "www.satraining-lms.redhat.com"
     // "description": "tbd",
-  

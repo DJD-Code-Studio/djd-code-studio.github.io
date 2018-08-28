@@ -18,18 +18,19 @@
 				output += '<label>'+myUrlDataArray[i].domainName+ '&nbsp&nbsp&nbsp' +'</label>'+'<a href="' + myUrlDataArray[i].url + '">' + myUrlDataArray[i].title + '</a><br />';
 				// output2[i] = [];
 
-				// // for (j = 0; j < output2.length; j++){
+				for (j = 0; j < output2.length; j++){
+					output2.
 
-				// output2[i][j] = j + '>>' + myUrlDataArray[i].id;	
+				// output2[i][j] = j + '>>' + myUrlDataArray[i].id;
 				// // }
 
-				
+
 
 			}
 			document.getElementById('div0').innerHTML = output;
 		}
 	</script>
-	
+
 	<!-- the function call -- the script tag loads the js file which has the function call embedded in it. The entire json data is in the parameter part of the function call -->
 	<script src="./myUrlData.js"></script>
 </body>
