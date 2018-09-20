@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Add New</title>
+    <style>
+      h1 {
+        color: blue;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-decoration-style: wavy;
+
+      }
+
+      .FormPosition {
+        margin: auto;
+        border: 10px;
+        /*border-style: solid;
+  border-color: blue;*/
+        width: 70%;
+        height: 87%;
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Enter the url in the form below</h1>
+    <br><br><br>
+    <br><br>
+    <form class="FormPosition" action="">
+      <hr>
+      <br><br>
+      <label for="url"> URL</label>
+      <input type="text" name="url" value="paste the url here" onclick="document.innerHtml.hide()">
+      <br />
+      <label for="url"> Page Title</label>
+      <input type="text" name="pagetitle" value="paste the page title here" onclick=".innerHtml.hide()">
+      <br>
+      <input type="submit" name="ClickToCopy" value="Click to copy form contents to clipboard" onclick="">
+    </form>
+  </body>
+
+</html>

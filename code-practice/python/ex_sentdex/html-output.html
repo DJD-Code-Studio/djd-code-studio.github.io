@@ -1,0 +1,109 @@
+<html>
+<head></head>
+<body>
+<table>
+<TR><TH>type</TH>
+<TH>name</TH>
+<TH>tbl_name</TH>
+<TH>rootpage</TH>
+<TH>sql</TH>
+</TR>
+<TR><TD>table</TD>
+<TD>Movie_Genres</TD>
+<TD>Movie_Genres</TD>
+<TD>2</TD>
+<TD>CREATE TABLE Movie_Genres (Genre VARCHAR UNIQUE ON CONFLICT ROLLBACK PRIMARY KEY ASC ON CONFLICT ROLLBACK, Count_per_Genre INTEGER)</TD>
+</TR>
+<TR><TD>index</TD>
+<TD>sqlite_autoindex_Movie_Genres_1</TD>
+<TD>Movie_Genres</TD>
+<TD>3</TD>
+<TD></TD>
+</TR>
+<TR><TD>table</TD>
+<TD>Movie_Main_Table2</TD>
+<TD>Movie_Main_Table2</TD>
+<TD>8</TD>
+<TD>CREATE TABLE Movie_Main_Table2 (&quot;Movie-ID&quot; VARCHAR PRIMARY KEY REFERENCES Movie_Main_Table (&quot;Movie-ID&quot;) ON DELETE CASCADE ON UPDATE CASCADE MATCH SIMPLE, &quot;Storage-Disk&quot; TEXT, &quot;Storage-Path&quot; TEXT, &quot;File-Name&quot; TEXT, &quot;Video-Quality (out of 10)&quot; DECIMAL, &quot;Subtitle-File-Location&quot; TEXT, &quot;Subtitles-File-Name&quot; TEXT, &quot;Story-Line&quot; TEXT)</TD>
+</TR>
+<TR><TD>index</TD>
+<TD>sqlite_autoindex_Movie_Main_Table2_1</TD>
+<TD>Movie_Main_Table2</TD>
+<TD>9</TD>
+<TD></TD>
+</TR>
+<TR><TD>table</TD>
+<TD>Movie_Main_Table</TD>
+<TD>Movie_Main_Table</TD>
+<TD>6</TD>
+<TD>CREATE TABLE Movie_Main_Table (&quot;Movie-ID&quot; VARCHAR PRIMARY KEY UNIQUE, &quot;Movie-Name&quot; VARCHAR, &quot;Movie-Release-Year&quot; INTEGER, &quot;Collection-Source&quot; VARCHAR NOT NULL, Downloaded BOOLEAN, Viewed BOOLEAN, &quot;IMDB-Rating&quot; DECIMAL, &quot;My-Rating&quot; DECIMAL, &quot;Multi-lingual&quot; BOOLEAN, &quot;Main-Language&quot; VARCHAR, &quot;Subtitles-Needed&quot; BOOLEAN, &quot;Subtitles-Present&quot; BOOLEAN)</TD>
+</TR>
+<TR><TD>index</TD>
+<TD>sqlite_autoindex_Movie_Main_Table_1</TD>
+<TD>Movie_Main_Table</TD>
+<TD>7</TD>
+<TD></TD>
+</TR>
+<TR><TD>table</TD>
+<TD>Movie_Genre_Mapping</TD>
+<TD>Movie_Genre_Mapping</TD>
+<TD>4</TD>
+<TD>CREATE TABLE Movie_Genre_Mapping (&quot;Movie-ID&quot; TEXT REFERENCES Movie_Main_Table (&quot;Movie-ID&quot;) ON UPDATE RESTRICT MATCH FULL, &quot;Movie-Name&quot; TEXT REFERENCES Movie_Main_Table (&quot;Movie-Name&quot;) ON UPDATE RESTRICT MATCH FULL, Genre TEXT REFERENCES Movie_Genres (Genre) ON UPDATE RESTRICT MATCH FULL, CONSTRAINT &quot;Movie-ID-Genre&quot; UNIQUE (&quot;Movie-ID&quot; ASC, Genre ASC))</TD>
+</TR>
+<TR><TD>index</TD>
+<TD>sqlite_autoindex_Movie_Genre_Mapping_1</TD>
+<TD>Movie_Genre_Mapping</TD>
+<TD>5</TD>
+<TD></TD>
+</TR>
+<TR><TD>trigger</TD>
+<TD>Auto-Incr-Genre-Count</TD>
+<TD>Movie_Genre_Mapping</TD>
+<TD>0</TD>
+<TD>CREATE TRIGGER &quot;Auto-Incr-Genre-Count&quot; AFTER INSERT ON Movie_Genre_Mapping FOR EACH ROW BEGIN UPDATE Movie_Genres SET Count_per_Genre = Count_per_Genre + 1 WHERE Genre = new.Genre; END</TD>
+</TR>
+<TR><TD>trigger</TD>
+<TD>Auto-Decr-Genre-Count</TD>
+<TD>Movie_Genre_Mapping</TD>
+<TD>0</TD>
+<TD>CREATE TRIGGER &quot;Auto-Decr-Genre-Count&quot; AFTER DELETE ON Movie_Genre_Mapping FOR EACH ROW BEGIN UPDATE Movie_Genres SET Count_per_Genre = Count_per_Genre - 1 WHERE Genre = old.Genre; END</TD>
+</TR>
+<TR><TD>trigger</TD>
+<TD>Update-Incr-Genre-Count</TD>
+<TD>Movie_Genre_Mapping</TD>
+<TD>0</TD>
+<TD>CREATE TRIGGER &quot;Update-Incr-Genre-Count&quot; AFTER UPDATE OF Genre ON Movie_Genre_Mapping FOR EACH ROW BEGIN UPDATE Movie_Genres SET Count_per_Genre = Count_per_Genre + 1 WHERE Genre = new.Genre; END</TD>
+</TR>
+<TR><TD>trigger</TD>
+<TD>Update-Decr-Genre-Count</TD>
+<TD>Movie_Genre_Mapping</TD>
+<TD>0</TD>
+<TD>CREATE TRIGGER &quot;Update-Decr-Genre-Count&quot; BEFORE UPDATE OF Genre ON Movie_Genre_Mapping FOR EACH ROW BEGIN UPDATE Movie_Genres SET Count_per_Genre = Count_per_Genre - 1 WHERE Genre = old.Genre; END</TD>
+</TR>
+<TR><TD>table</TD>
+<TD>Director_And_Actor</TD>
+<TD>Director_And_Actor</TD>
+<TD>10</TD>
+<TD>CREATE TABLE Director_And_Actor (
+    [Person-ID]   TEXT PRIMARY KEY
+                       UNIQUE,
+    [Person-Name] TEXT,
+    [Person-Role] TEXT,
+    [Person-Country]  TEXT,
+    [Person-Country-of-Origin] TEXT,
+    [Received-Award] INTEGER,
+    [Award-Name] TEXT,
+    [Award-Year] INTEGER,
+    [Award-Country] TEXT
+
+)</TD>
+</TR>
+<TR><TD>index</TD>
+<TD>sqlite_autoindex_Director_And_Actor_1</TD>
+<TD>Director_And_Actor</TD>
+<TD>11</TD>
+<TD></TD>
+</TR>
+</table>
+</body>
+</html>

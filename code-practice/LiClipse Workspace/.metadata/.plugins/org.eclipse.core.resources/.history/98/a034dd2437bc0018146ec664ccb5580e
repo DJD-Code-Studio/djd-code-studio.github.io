@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Add New</title>
+    <style>
+      h1 {
+        color: blue;
+        text-align: center;
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-decoration-style: wavy;
+
+      }
+
+      .FormPosition {
+        margin: auto;
+        border: 10px;
+        /*border-style: solid;
+  border-color: blue;*/
+        width: 70%;
+        height: 87%;
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  &lt;body&gt;
+    &lt;h1&gt;Enter the url in the form below&lt;/h1&gt;
+    &lt;br&gt;&lt;br&gt;&lt;br&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;form class=&quot;FormPosition&quot; action=&quot;&quot;&gt;
+      &lt;hr&gt;
+      &lt;br&gt;&lt;br&gt;
+      &lt;label for=&quot;url&quot;&gt; URL&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;url&quot; value=&quot;paste the url here&quot; onclick=&quot;document.innerHtml.hide()&quot;&gt;
+      &lt;br /&gt;
+      &lt;label for=&quot;url&quot;&gt; Page Title&lt;/label&gt;
+      &lt;input type=&quot;text&quot; name=&quot;pagetitle&quot; value=&quot;paste the page title here&quot; onclick=&quot;.innerHtml.hide()&quot;&gt;
+      &lt;br&gt;
+      &lt;input type=&quot;submit&quot; name=&quot;ClickToCopy&quot; value=&quot;Click to copy form contents to clipboard&quot; onclick=&quot;&quot;&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+
+</html>

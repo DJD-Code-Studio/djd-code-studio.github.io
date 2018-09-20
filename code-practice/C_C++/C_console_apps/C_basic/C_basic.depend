@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1537174502 source:c:\deb\mygitrepos\djd-code-studio.github.io\code-practice\c_console_apps\c_basic\main.c
+
+1537175156 source:c:\deb\mygitrepos\djd-code-studio.github.io\code-practice\c_console_apps\c_basic\arc.cpp
+	<graphics.h>
+	<conio.h>
+

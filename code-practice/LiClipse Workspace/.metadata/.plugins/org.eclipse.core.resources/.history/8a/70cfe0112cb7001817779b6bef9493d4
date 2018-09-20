@@ -1,0 +1,13 @@
+
+import os
+from spyder.plugins import workingdirectory
+
+# each website you crawl is a separate project (folder)
+
+def create_project_directory(directory):
+    if not os.path.exists(directory):
+        print("Creating prject : " , directory)
+        os.makedirs(directory)
+        
+
+create_project_directory(thenewboston)

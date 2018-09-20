@@ -1,0 +1,1 @@
+./wget.exe -e robots=off -o C:/DEB/ApacheSpark/wget.log -m -p -k --no-check-certificate --secure-protocol=auto -P  

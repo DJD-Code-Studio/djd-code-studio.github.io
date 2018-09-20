@@ -1,0 +1,31 @@
+-- VERSION_5
+-- START DISKCACHE_2
+C:\DEB\myGitRepos\djd-code-studio.github.io\code-practice\LiClipse Workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\ex_thenewboston_PyWebCrawler\com.python.pydev.analysis\v2_indexcache
+general|1537355298710391000|C:\DEB\myGitRepos\djd-code-studio.github.io\code-practice\Python\ex_thenewboston_PyWebCrawler\general.py
+link_finder|1536845046380090000|C:\DEB\myGitRepos\djd-code-studio.github.io\code-practice\Python\ex_thenewboston_PyWebCrawler\link_finder.py
+-- END DISKCACHE
+-- START DICTIONARY
+5
+2=general
+3=C:\DEB\myGitRepos\djd-code-studio.github.io\code-practice\Python\ex_thenewboston_PyWebCrawler\link_finder.py
+4=link_finder
+1=C:\DEB\myGitRepos\djd-code-studio.github.io\code-practice\Python\ex_thenewboston_PyWebCrawler\general.py
+5=LinkFinder
+-- END DICTIONARY
+-- START TREE 1
+8
+app|1|append_to_file!1^32#5*18@
+cre|2|create_data_files!1^16#5*18@create_project_directory!1^7#5*18@
+del|1|delete_file_contents!1^37#5*18@
+fil|1|file_to_set!1^42#5*18@
+fin|1|finder!3^16#1*35@
+lin|1|LinkFinder!3^4#7*33@
+set|1|set_to_file!1^50#5*18@
+wri|1|write_file!1^26#5*18@
+-- END TREE
+-- START TREE 2
+3
+__i|1|__init__!5&3^6#9*34@
+err|1|error!5&3^9#9*34@
+han|1|handle_starttag!5&3^12#9*34@
+-- END TREE
