@@ -5,7 +5,7 @@
 
 body {
   margin:auto;
-  width: 700px;
+  
 	text-align: center;
   /* background-color: blue; */
   border-style: hidden;
@@ -44,3 +44,18 @@ border-radius: 15px;
 }
 
 }
+
+@media screen {
+	body {
+		
+	width: 800px;	
+	}
+	
+@media (max-device-width: 800px) {
+	body {
+		
+	width: auto;	
+	}
+	
+	
+	
