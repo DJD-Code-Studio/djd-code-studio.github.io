@@ -50,12 +50,14 @@ border-radius: 15px;
 		
 	width: 800px;	
 	}
+}
 	
 @media (max-device-width: 800px) {
 	body {
 		
 	width: auto;	
 	}
+}
 	
 	
 	
