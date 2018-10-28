@@ -86,12 +86,12 @@
 		*/
 		margin-top: 21%;
 		margin-bottom: 0%;
-		width: 70%;
+		width: auto;
 		/*list-style: none;
 		*/
 		
-		font: normal normal normal medium 'Courier New', Courier, 'Andale Mono', monospace;
-		font-size: 1em;
+		font-family: 'Courier New', Courier, 'Andale Mono', monospace;
+		font-size: 2em;
 		text-align: right;
 	}
 	
