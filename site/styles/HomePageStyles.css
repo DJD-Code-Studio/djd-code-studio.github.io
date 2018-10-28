@@ -24,7 +24,7 @@
 	}
 	
 	button {
-		font-size: 1em;
+		font-size: 2em;
 		width: auto;
 		height: 50px;
 		border-radius: 50px;
@@ -91,6 +91,7 @@
 		*/
 		
 		font: normal normal normal medium 'Courier New', Courier, 'Andale Mono', monospace;
+		font-size: 1em;
 		text-align: right;
 	}
 	
