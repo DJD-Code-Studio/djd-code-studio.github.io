@@ -65,7 +65,7 @@
 		margin-left: 5%;
 		margin-top: 5%;
 		width: 20%;
-		height: 145px;
+		height: 150px;
 		/*border-color: black;
 			border-style: solid;
 		*/
@@ -85,14 +85,14 @@
 		/*margin-right: 5%;
 		*/
 		/*margin-top: 21%;*/
-		margin-top:auto;
+		margin-top: 0%;
 		margin-bottom: 0%;
 		width: auto;
 		/*list-style: none;
 		*/
 		
 		font-family: 'Courier New', Courier, 'Andale Mono', monospace;
-		font-size: 2em;
+		font-size: 1.5em;
 		text-align: right;
 	}
 	
@@ -102,7 +102,7 @@
 		margin-right: 3%;
 		padding-right: 3%;
 		text-align: left;
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 	
 }
