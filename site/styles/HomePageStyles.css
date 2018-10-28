@@ -1,63 +1,106 @@
-
-
-@media screen, (max-device-width: 800px) {
-
-
-body {
-  margin:auto;
-  
-	text-align: center;
-  /* background-color: blue; */
-  border-style: hidden;
-  border-style: solid;
-
-	font-size: 1.5em;
-}
-button {
-	font-size: 1.5em;
-	width:200px;
-	height: 50px;
-	border-radius: 50px;
-}
-#banner {
-	margin: auto;
-	width: 100%;
-	/*height: 100px;*/
-
-
-}
-.allTiles {
-	margin:auto;
-	width: 70%;
-  border-style: solid;
-
-}
-
-.eachTile {
-	width: 25%;
-	background-color: rgba(200,100,255,1);
-border-style:dotted;
-border-radius: 15px;
-
-	float:
-
-}
-
-}
-
 @media screen {
 	body {
-		
-	width: 800px;	
+		width: 800px;
 	}
-}
 	
+}
+
 @media (max-device-width: 800px) {
 	body {
-		
-	width: auto;	
+		width: auto;
 	}
+	
 }
+
+@media screen, (max-device-width: 800px) {
+	body {
+		margin: auto;
+		text-align: center;
+		/*background-color: blue;
+			/*border-style: solid;
+			border-color: red;
+		*/
+		font-size: 1.5em;
+	}
 	
+	button {
+		font-size: 1em;
+		width: 400px;
+		height: 50px;
+		border-radius: 50px;
+		
+		
+	}
 	
+	#banner {
+		margin: auto;
+		width: 100%;
+		/*height: 100px;
+		*/
+	}
 	
+	.pageContentDiv {
+		overflow: auto;
+	}
+	
+	.pageContentDiv2 {
+		overflow: auto;
+		/*    margin-top: auto;
+		*/
+		width: 99%;
+		/*border-style: solid;
+			border-color: green;
+		*/
+	}
+	
+	.eachTile {
+		width: 25%;
+		background-color: rgba(200,100,255,1);
+		border-style: dotted;
+		border-radius: 15px;
+		float:
+	}
+	
+	#selfie {
+		margin-left: 5%;
+		margin-top: 5%;
+		width: 120px;
+		height: 145px;
+		/*border-color: black;
+			border-style: solid;
+		*/
+		float: left;
+	}
+	
+	hr {
+		margin: 2px;
+		width: 100%;
+		color: rgb(0,0,255);
+		float: right;
+	}
+	
+	#pageMenu {
+		display: inline;
+		float: right;
+		/*margin-right: 5%;
+		*/
+		margin-top: 21%;
+		margin-bottom: 0%;
+		width: 70%;
+		/*list-style: none;
+		*/
+		
+		font: normal normal normal medium 'Courier New', Courier, 'Andale Mono', monospace;
+		text-align: right;
+	}
+	
+	.pageMenuItems {
+		display: inline-block;
+		list-style-type: none;
+		margin-right: 3%;
+		padding-right: 3%;
+		text-align: left;
+	}
+	
+}
+
