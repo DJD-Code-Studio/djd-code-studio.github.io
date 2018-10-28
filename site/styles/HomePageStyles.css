@@ -64,7 +64,7 @@
 	#selfie {
 		margin-left: 5%;
 		margin-top: 5%;
-		width: 120px;
+		width: 20%;
 		height: 145px;
 		/*border-color: black;
 			border-style: solid;
@@ -84,7 +84,8 @@
 		float: right;
 		/*margin-right: 5%;
 		*/
-		margin-top: 21%;
+		/*margin-top: 21%;*/
+		margin-top:auto;
 		margin-bottom: 0%;
 		width: auto;
 		/*list-style: none;
